@@ -45,7 +45,7 @@ linkedin_username: kartikeyavi
 
 # About Section
 # about_title: About Me
-about_profile_image: images/Profile Picture Centered.jpg
+about_profile_image: images/Profile Picture.jpg
 about_content: | # this will include new lines to allow paragraphs
   I'm a passionate Machine Learning Engineer with a strong foundation in data science and a knack for building efficient and accurate models. I leverage my expertise in Python, R, TensorFlow, and other state-of-the-art libraries to tackle complex challenges across various domains
   My journey began with a deep theoretical understanding of core concepts like Advanced ML, Computer Vision, Natural Language Processing, and Probability & Linear Algebra.  I further honed my skills through practical experience in internships and academic projects.
