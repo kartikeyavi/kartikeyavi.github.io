@@ -6,34 +6,34 @@ favicon: images/favicon.ico
 version: 2
 
 # Personal info
-name: Brett Harris
-title: Senior Network System Administrator
-email: brett.h@email.co.uk
-website: www.github.com/sproogen/resume-theme
+name:  Kartikeya Singh
+title: Artificial Intelligence Developer
+email: kartikeyavia2r@gmail.com  
+website: https://kartikeyavi.github.io/
 
 # Dark Mode (true/false/never)
-darkmode: false
+darkmode: true
 
 # Social links
-twitter_username: facespics
-github_username:  sproogen
+# twitter_username: facespics
+# github_username:  sproogen
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
-instagram_username: jameswgrant
-linkedin_username: jameswgrant
+# instagram_username: jameswgrant
+linkedin_username: kartikeyavi
 # xing_username: jekyll
 # pinterest_username: jekyll
-youtube_username: globalmtb
+# youtube_username: globalmtb
 # googleplus_username: +jekyll
 # orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
-additional_links:
-- title: itsgoingto.be
-  icon: fas fa-globe
-  url: https://www.itsgoingto.be
+# additional_links:
+# - title: itsgoingto.be
+#   icon: fas fa-globe
+#   url: https://www.itsgoingto.be
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
 #   url: Link url (eg. https://google.com)
@@ -48,10 +48,20 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's Brett and I'm a senior network system administrator. As well as administrating systems I also have experience making software and web apps. I have worked at a number of companies gaining teamwork and leadership skills.
+  I'm a passionate Machine Learning Engineer with a strong foundation in data science and a knack for building efficient and accurate models. I leverage my expertise in Python, R, TensorFlow, and other state-of-the-art libraries to tackle complex challenges across various domains.
 
-  I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
+  My Journey in Machine Learning
 
+  My journey began with a deep theoretical understanding of core concepts like Advanced ML, Computer Vision, NLP, and Probability & Linear Algebra.  I further honed my skills through practical experience in internships and academic projects.
+
+  Experience Highlights:
+    Developed a Diabetic Retinopathy Detection System: Achieved over 90% accuracy in detecting leaks in retinal angiographs using custom-designed CNNs.
+    Automated Medical/Research Document Classification: Built ML models (K-Means, Random Forest, XGBoost) to automate document classification for The Digital Group, achieving an 85% accuracy on 1 million+ documents.
+    Enhanced Code Classification with NLP: Improved code classification accuracy to 98% by training NLP models and optimizing vectorization techniques (Word2Vec, Doc2Vec).
+  
+  Beyond the Code
+    My passion for learning goes beyond technical skills. I actively participate in online courses (Stanford's CS229) and conferences (Data Dynamics Summit) to stay updated on the latest advancements in the field.
+    
 content:
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
