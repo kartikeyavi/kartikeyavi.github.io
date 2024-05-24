@@ -1,5 +1,5 @@
 # Site
-repository: sproogen/resume-theme
+repository: kartikeyavi/resume
 favicon: images/favicon.ico
 
 # Content configuration version
@@ -16,7 +16,7 @@ darkmode: never
 
 # Social links
 # twitter_username: facespics
-# github_username:  sproogen
+github_username:  kartikeya
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
@@ -62,12 +62,12 @@ content:
     content:
       - layout: top-middle
         title: Super awesome project
-        link: github.com/sproogen
+        link: github.com/kartikeyavi
         # link_text: Project Website
         additional_links:
           - title:  sproogen/modern-resume-theme
             icon: fab fa-github
-            url: github.com/sproogen/modern-resume-theme
+            url: github.com/kartikeyavi/resume
           # - title:  Github page for project (eg. sproogen/modern-resume-theme)
           #   icon: fab fa-github
           #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
@@ -121,7 +121,8 @@ footer_show_references: true
 # references_title: References on request (Override references text)
 
 # Build settings
-remote_theme: sproogen/resume-theme
+theme: resume
+remote_theme: kartikeyavi/resume
 
 sass:
   sass_dir: _sass
