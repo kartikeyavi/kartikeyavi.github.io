@@ -55,9 +55,12 @@ about_content: | # this will include new lines to allow paragraphs
   My journey began with a deep theoretical understanding of core concepts like Advanced ML, Computer Vision, NLP, and Probability & Linear Algebra.  I further honed my skills through practical experience in internships and academic projects.
 
   Experience Highlights:
-    Developed a Diabetic Retinopathy Detection System: Achieved over 90% accuracy in detecting leaks in retinal angiographs using custom-designed CNNs.
-    Automated Medical/Research Document Classification: Built ML models (K-Means, Random Forest, XGBoost) to automate document classification for The Digital Group, achieving an 85% accuracy on 1 million+ documents.
-    Enhanced Code Classification with NLP: Improved code classification accuracy to 98% by training NLP models and optimizing vectorization techniques (Word2Vec, Doc2Vec).
+  
+    /t Developed a Diabetic Retinopathy Detection System: Achieved over 90% accuracy in detecting leaks in retinal angiographs using custom-designed CNNs.
+    
+    /t Automated Medical/Research Document Classification: Built ML models (K-Means, Random Forest, XGBoost) to automate document classification for The Digital Group, achieving an 85% accuracy on 1 million+ documents.
+    
+    /t Enhanced Code Classification with NLP: Improved code classification accuracy to 98% by training NLP models and optimizing vectorization techniques (Word2Vec, Doc2Vec).
   
   Beyond the Code
     My passion for learning goes beyond technical skills. I actively participate in online courses (Stanford's CS229) and conferences (Data Dynamics Summit) to stay updated on the latest advancements in the field.
