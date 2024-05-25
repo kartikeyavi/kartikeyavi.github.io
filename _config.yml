@@ -70,12 +70,12 @@ content:
           # quote: >
           #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
           description: | # this will include new lines to allow paragraphs
-            - Developed a daily news aggregator using Python and modern web technologies.
-            - Automated news scraping: Built a Python script utilizing Selenium to gather daily news articles from various sources, covering diverse topics.
-            - Data pipeline and API development: Implemented a Flask application to ingest scraped articles, store them in an SQL database, and provide an API for access.
-            - Search functionality: Enhanced the API to return search results based on user queries.
-            - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
-            - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
+            Developed a daily news aggregator using Python and modern web technologies.
+              - Automated news scraping: Built a Python script utilizing Selenium to gather daily news articles from various sources, covering diverse topics.
+              - Data pipeline and API development: Implemented a Flask application to ingest scraped articles, store them in an SQL database, and provide an API for access.
+              - Search functionality: Enhanced the API to return search results based on user queries.
+              - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
+              - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
 
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
