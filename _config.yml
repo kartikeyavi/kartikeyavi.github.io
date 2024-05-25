@@ -55,27 +55,27 @@ content:
             - Implemented and compared various image pre-processing techniques (filters, cropping, normalization) to optimize Convolutional Neural Network (CNN) input for superior performance.
             - Designed and trained a CNN model achieving >90% accuracy in DR detection using TensorFlow, NumPy, OpenCV, and scikit-learn libraries.
             - Experimented with diverse CNN architectures (convolutional, pooling, dense layers) and activation functions (ReLU, tanh, sigmoid) to achieve optimal results.
-        - layout: left
-          title: Hermes News Feed
-          link: https://github.com/kartikeyavi/Hermes-News-Feed
-          link_text: Github Repository
-          icon: fab fa-github
-          # additional_links:
-          #   - title:  sproogen/modern-resume-theme
-          #     icon: fab fa-github
-          #     url: github.com/kartikeyavi/resume
-            # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            #   icon: fab fa-github
-            #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-          # quote: >
-          #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
-          description: | # this will include new lines to allow paragraphs
-            Developed a daily news aggregator using Python and modern web technologies.
-              - Automated news scraping: Built a Python script utilizing Selenium to gather daily news articles from various sources, covering diverse topics.
-              - Data pipeline and API development: Implemented a Flask application to ingest scraped articles, store them in an SQL database, and provide an API for access.
-              - Search functionality: Enhanced the API to return search results based on user queries.
-              - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
-              - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
+      - layout: left
+        title: Hermes News Feed
+        link: https://github.com/kartikeyavi/Hermes-News-Feed
+        link_text: Github Repository
+        icon: fab fa-github
+        # additional_links:
+        #   - title:  sproogen/modern-resume-theme
+        #     icon: fab fa-github
+        #     url: github.com/kartikeyavi/resume
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+        # quote: >
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+        description: | # this will include new lines to allow paragraphs
+          Developed a daily news aggregator using Python and modern web technologies.
+            - Automated news scraping: Built a Python script utilizing Selenium to gather daily news articles from various sources, covering diverse topics.
+            - Data pipeline and API development: Implemented a Flask application to ingest scraped articles, store them in an SQL database, and provide an API for access.
+            - Search functionality: Enhanced the API to return search results based on user queries.
+            - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
+            - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
 
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
