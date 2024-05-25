@@ -10,39 +10,15 @@ version: 2
 name:  KARTIKEYA SINGH
 title: Machine Learning Developer
 email: kartikeyavia2r@gmail.com  
+phone: +91-7339910494
 
 # Dark Mode (true/false/never)
 darkmode: never
 
 # Social links
-# twitter_username: facespics
 github_username:  kartikeyavi
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-# instagram_username: jameswgrant
 linkedin_username: kartikeyavi
-# xing_username: jekyll
-# pinterest_username: jekyll
-# youtube_username: globalmtb
-# googleplus_username: +jekyll
-# orcid_username: 0000-0000-0000-0000
 
-# Additional icon links
-# additional_links:
-# - title: itsgoingto.be
-#   icon: fas fa-globe
-#   url: https://www.itsgoingto.be
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
-#   url: Link url (eg. https://google.com)
-
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
 
 # About Section
 # about_title: About Me
@@ -60,10 +36,10 @@ content:
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: top-middle
-        title: Super awesome project
-        link: github.com/kartikeyavi
-        # link_text: Project Website
+      - layout: left
+        title: Diabetic Retinopathy Detection using Retinal Angiogram
+        link: github.com/kartikeyavi/Diabetic-Retinopathy
+        link_text: Project Repository
         additional_links:
           - title:  sproogen/modern-resume-theme
             icon: fab fa-github
@@ -71,10 +47,14 @@ content:
           # - title:  Github page for project (eg. sproogen/modern-resume-theme)
           #   icon: fab fa-github
           #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        quote: >
-          This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+        # quote: >
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
+          Developed a high-accuracy diabetic retinopathy detection system using Machine Learning
+            - Built a scalable Machine Learning pipeline in Python to process over 100GB of retinal angiogram scans for diabetic retinopathy (DR) detection, a leading cause of blindness globally.
+            - Implemented and compared various image pre-processing techniques (filters, cropping, normalization) to optimize Convolutional Neural Network (CNN) input for superior performance.
+            - Designed and trained a CNN model achieving >90% accuracy in DR detection using TensorFlow, NumPy, OpenCV, and scikit-learn libraries.
+            - Experimented with diverse CNN architectures (convolutional, pooling, dense layers) and activation functions (ReLU, tanh, sigmoid) to achieve optimal results.
 
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
