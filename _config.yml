@@ -24,14 +24,27 @@ linkedin_username: kartikeyavi
 # about_title: About Me
 about_profile_image: images/Profile Picture.jpg
 about_content: | # this will include new lines to allow paragraphs
-  I'm a passionate Machine Learning Engineer with a strong foundation in data science and a knack for building efficient and accurate models. I leverage my expertise in Python, R, TensorFlow, and other state-of-the-art libraries to tackle complex challenges across various domains
-  My journey began with a deep theoretical understanding of core concepts like Advanced ML, Computer Vision, Natural Language Processing, and Probability & Linear Algebra.  I further honed my skills through practical experience in internships and academic projects.
+  Hi, I am Kartikeya Singh. A machine learning developer. For the past 3 years I have been exploring the world of Machine Learning 
+  and AI. After going through various phases in my career, I have come to the conclusion to align my career in the field of research
 
-  Experience Highlights:
-  - Developed a Diabetic Retinopathy Detection System: Achieved over 90% accuracy in detecting leaks in retinal angiographs using custom-designed CNNs.
-  - Automated Medical/Research Document Classification: Built ML models (K-Means, Random Forest, XGBoost) to automate document classification for The Digital Group, achieving an 85% accuracy on 1 million+ documents.
-  - Enhanced Code Classification with NLP: Improved code classification accuracy to 98% by training NLP models and optimizing vectorization techniques (Word2Vec, Doc2Vec).
-      
+  My passion for research lies in my desire for innovation. I am at my most efective, when I coming up for new and unique ideas or 
+  applications for problems in my surroundings. I prefer looking for oportunities and having the patience to look for them. Attending 
+  conferences expanded my view of academia. These days I am exploring the world of ML from an academic standpoint. I have been 
+  studying ML algorithms using their mathematical derivations and original research papers.
+  
+  My research interests include:
+  - Machine Learning
+  - Machine Learning in Cybersecurity
+  - Artificial Inteligence
+  - Computer Vision
+  - Natural Language 
+    
+  I am currently looking for opportunities as a Research Fellow, RA, and similar roles. I seek this for the ablity to be introduced 
+  into the world of research. I am open to roles in India and Abroad.I Would love to connect with you. Kindly Connect with me using 
+  the email-id in the header.  
+
+
+
 content:
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
@@ -78,48 +91,72 @@ content:
             - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
             - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
 
-  - title: Experience # Title for the section
+  - title: Work Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: left
-        title: The Boring Company
-        link: boringcompany.com
-        # link_text: boringcompany.com
-        sub_title: Senior Network System Administrator
-        caption: November 2017 - Present
-        quote: >
-          Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
-        description: | # this will include new lines to allow paragraphs
-            Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.
 
+      - layout: left
+        title: The Digital Group
+        link: https://www.thedigitalgroup.com/
+        # link_text: boringcompany.com
+        sub_title: Software Trainee
+        caption: October 2022 - March 2023
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+          - Leveraged machine learning algorithms like K-Means, BIRCH, and DBSCAN to achieve an accuracy of 85% in document clustering. This intelligent grouping of similar documents facilitated faster information retrieval and analysis by researchers.
+          - To address the complexities of medical/research code, I constructed and trained robust Natural Language Processing (NLP) models using Random Forest and XGBoost algorithms. These models achieved a remarkable accuracy of 98% on a massive dataset of over 150,000 code lines, significantly streamlining the analysis process for researchers.
+          - Furthermore, I meticulously optimized vectorization models like Word2Vec and Doc2Vec, resulting in a 20-30% improvement in model efficiency. This translates to reduced processing time and lower resource consumption, making the system more scalable and cost-effective.
+ 
+      - layout: left
+        title: CyberPWN Technologies
+        link: https://www.cyberpwn.com/
+        # link_text: boringcompany.com
+        sub_title: Data Science Intern
+        caption: February 2022 - March 2023
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+          At the cutting edge of cybersecurity, I played a pivotal role in integrating machine learning to bolster network defenses. My focus areas included:
+          - Automated Anomaly Detection: I spearheaded the implementation of machine learning algorithms to continuously analyze network activity. This included traffic patterns, user behavior, and IP data. By establishing baselines for normal activity, the algorithms could identify deviations in real-time, allowing for swift intervention and potential breach prevention.
+          - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.
+   
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Harvard University
-        caption: 2010 - 2013
-        sub_title: BSc Computer Science
-        quote: >
-          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+        title: Center for Development of Advanced Computing, Pune
+        sub_title: Post Graduate - Diploma in Big Data Analytics
+        caption: March - September 2023
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
         description: | # this will include new lines to allow paragraphs
-          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
+          - Graduated with a Distinction (73.89%) in a rigorous PG Diploma program focusing on Machine Learning, Natural Language Processing, Data Science, and Artificial Intelligence.
+          - Demonstrated a passion for independent learning by actively exploring Computer Vision and related topics beyond the curriculum.
+          - Sought out mentorship by consistently engaging with instructors with over 28 years of experience, further deepening my understanding of various topics. This proactive approach was the most rewarding aspect of my program and ignited my interest in a research-oriented career.
+          - Exceeded expectations by completing advanced final projects that went beyond the scope of the syllabus, showcasing my ability to tackle complex problems independently.
 
-          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
 
-  - title: A Little More About Me
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - Rock climbing
-      - Gaming
-      - Knitting
-      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
-
-      Look at this cool image  
-      ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
+      - layout: left
+        title: KIIT University
+        sub_title: B. Tech in Information Technology
+        caption: October 2019 - May 2023
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+          - Graduated with a strong GPA of 8.04, demonstrating proficiency in a rigorous engineering curriculum.
+          - Equipped myself with in-demand technical skills through coursework in Machine Learning, Natural Language Processing (NLP), Data Science, and Artificial Intelligence (AI).
+          - Completed diverse final-year projects, showcasing my ability to apply knowledge across various domains, including Web Development and Artificial Intelligence.
+      - layout: left
+        title: High School Education
+        # quote: >
+        #   Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+        description: | # this will include new lines to allow paragraphs
+          - Passed 12th Class with 79.8% marks in 2019 under CBSE Board
+          - Passed 10th Class with 79.6% marks in 2017 under CBSE Board
 
 # Footer
-footer_show_references: true
+footer_show_references: false
 # references_title: References on request (Override references text)
 
 # Build settings
