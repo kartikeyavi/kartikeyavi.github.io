@@ -43,29 +43,28 @@ about_content: | # this will include new lines to allow paragraphs
 
 
 content:
-  - title: Key Skills # Title for the section
-    layout: list # Type of content section (list/text)
-    content: 
-      - layout: left
-        title: Programing Languages
-        description: | # this will include new lines to allow paragraphs
-          - Python
-            - *Data Science:* Numpy,  Pandas, Matplotlib, Seaborn
-            - *Web Development:* Django, Flask and Selenium
-            - Scikit Learn
-            - *Advanced Machine Learning:* Keras, OpenCV, Scikit-Learn, OpenCV, Gensim and NLTK
-          - R
-          - Java
-          - C / C++
-          - SQL
-      - layout: left
-        title: Theoretical Domains
-        description: |
-          - *Mathematics:* Probability, Statistics, Linear Algebra and Calculus (Basic) 
-          - *Computer Science:* Linux, Database Management and Cloud Computing (Basic)
-          - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics and Big Data (Basics).
-          - *Artificial Intelligence:* Machine Learning, Deep Learning, Model Optimisation, Commputer Vision and Natural Language Processing
-
+  # - title: Key Skills # Title for the section
+  #   layout: list # Type of content section (list/text)
+  #   content: 
+  #     - layout: left
+  #       title: Programing Languages
+  #       description: | # this will include new lines to allow paragraphs
+  #         - Python
+  #           - *Data Science:* Numpy,  Pandas, Matplotlib, Seaborn
+  #           - *Web Development:* Django, Flask and Selenium
+  #           - Scikit Learn
+  #           - *Advanced Machine Learning:* Keras, OpenCV, Scikit-Learn, OpenCV, Gensim and NLTK
+  #         - R
+  #         - Java
+  #         - C / C++
+  #         - SQL
+  #     - layout: left
+  #       title: Theoretical Domains
+  #       description: |
+  #         - *Mathematics:* Probability, Statistics, Linear Algebra and Calculus (Basic) 
+  #         - *Computer Science:* Linux, Database Management and Cloud Computing (Basic)
+  #         - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics and Big Data (Basics).
+  #         - *Artificial Intelligence:* Machine Learning, Deep Learning, Model Optimisation, Commputer Vision and Natural Language Processing
 
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
@@ -141,37 +140,37 @@ content:
           - Automated Anomaly Detection: I spearheaded the implementation of machine learning algorithms to continuously analyze network activity. This included traffic patterns, user behavior, and IP data. By establishing baselines for normal activity, the algorithms could identify deviations in real-time, allowing for swift intervention and potential breach prevention.
           - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.   
   
-  # - title: Education # Title for the section
-  #   layout: list # Type of content section (list/text)
-  #   content:
-  #     - layout: left
-  #       title: Center for Development of Advanced Computing, Pune
-  #       sub_title: Post Graduate - Diploma in Big Data Analytics
-  #       caption: March 2023 - September 2023
-  #       # quote: >
-  #       #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
-  #       description: | # this will include new lines to allow paragraphs
-  #         - Graduated with a Distinction (73.89%) in a rigorous PG Diploma program focusing on Machine Learning, Natural Language Processing, Data Science, and Artificial Intelligence.
-  #         - Demonstrated a passion for independent learning by actively exploring Computer Vision and related topics beyond the curriculum.
-  #         - Sought out mentorship by consistently engaging with instructors with over 28 years of experience, further deepening my understanding of various topics. This proactive approach was the most rewarding aspect of my program and ignited my interest in a research-oriented career.
-  #         - Exceeded expectations by completing advanced final projects that went beyond the scope of the syllabus, showcasing my ability to tackle complex problems independently.
-  #     - layout: left
-  #       title: KIIT University
-  #       sub_title: B. Tech in Information Technology
-  #       caption: October 2019 - May 2023
-  #       # quote: >
-  #       #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
-  #       description: | # this will include new lines to allow paragraphs
-  #         - Graduated with a strong GPA of 8.04, demonstrating proficiency in a rigorous engineering curriculum.
-  #         - Equipped myself with in-demand technical skills through coursework in Machine Learning, Natural Language Processing (NLP), Data Science, and Artificial Intelligence (AI).
-  #         - Completed diverse final-year projects, showcasing my ability to apply knowledge across various domains, including Web Development and Artificial Intelligence.
-  #     - layout: left
-  #       title: High School Education
-  #       # quote: >
-  #       #   Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
-  #       description: | # this will include new lines to allow paragraphs
-  #         - Secured a commendable 79.8% in the Class 12th CBSE Board Examinations (2019) at Delhi Public School, Jodhpur.
-  #        - Achieved a strong 79.6% in the Class 10th CBSE Board Examinations (2017) at Delhi Public School, Jodhpur.
+  - title: Education # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Center for Development of Advanced Computing, Pune
+        sub_title: Post Graduate - Diploma in Big Data Analytics
+        caption: March 2023 - September 2023
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+          - Graduated with a Distinction (73.89%) in a rigorous PG Diploma program focusing on Machine Learning, Natural Language Processing, Data Science, and Artificial Intelligence.
+          - Demonstrated a passion for independent learning by actively exploring Computer Vision and related topics beyond the curriculum.
+          - Sought out mentorship by consistently engaging with instructors with over 28 years of experience, further deepening my understanding of various topics. This proactive approach was the most rewarding aspect of my program and ignited my interest in a research-oriented career.
+          - Exceeded expectations by completing advanced final projects that went beyond the scope of the syllabus, showcasing my ability to tackle complex problems independently.
+      - layout: left
+        title: KIIT University
+        sub_title: B. Tech in Information Technology
+        caption: October 2019 - May 2023
+        # quote: >
+        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+          - Graduated with a strong GPA of 8.04, demonstrating proficiency in a rigorous engineering curriculum.
+          - Equipped myself with in-demand technical skills through coursework in Machine Learning, Natural Language Processing (NLP), Data Science, and Artificial Intelligence (AI).
+          - Completed diverse final-year projects, showcasing my ability to apply knowledge across various domains, including Web Development and Artificial Intelligence.
+      - layout: left
+        title: High School Education
+        # quote: >
+        #   Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+        description: | # this will include new lines to allow paragraphs
+          - Secured a commendable 79.8% in the Class 12th CBSE Board Examinations (2019) at Delhi Public School, Jodhpur.
+          - Achieved a strong 79.6% in the Class 10th CBSE Board Examinations (2017) at Delhi Public School, Jodhpur.
     - title: Courses # Title for the section
       layout: text # Type of content section (list/text)
       content: | # this will include new lines to allow paragraphs
