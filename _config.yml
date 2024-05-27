@@ -11,10 +11,11 @@ title: Machine Learning Developer
 email: kartikeyavia2r@gmail.com  
 phone: +91-7339910494
 websites:
-  - title: Cover Letter
-    website: https://www.canva.com/design/DAF-bYwdVg8/976STYAkYYta_lSIR57erw/view?utm_content=DAF-bYwdVg8&utm_campaign=designshare&utm_medium=link&utm_source=editor
-  - title: Curriculum Vitae
-    website: https://www.canva.com/design/DAGAhku-zvQ/isp871808WP4brRw6DlvPg/view?utm_content=DAGAhku-zvQ&utm_campaign=designshare&utm_medium=link&utm_source=editor
+  - title: Cover Letter (Click Here)
+    website: https://drive.google.com/file/d/18tpfxGV_wgdkafjtx1GhmdsDiLY00ieU/view?usp=drive_link
+  - title: Curriculum Vitae (Click Here)
+    website: https://drive.google.com/file/d/12zoDnUPQqHKzQOwwRPkOSYwq4mYZ7gcs/view?usp=drive_link
+
 # Dark Mode (true/false/never)
 darkmode: never
 
@@ -46,6 +47,7 @@ about_content: | # this will include new lines to allow paragraphs
   - Machine Learning
   - Computer Vision
   - Natural Language Processing
+  - Model Optimisation
 
   Driven by a deep desire to push the boundaries of ML innovation, I am actively pursuing a research career.  The opportunity to delve deeper into the theoretical underpinnings of Machine Learning algorithms through in-depth study of original research papers excites me immensely.  I am confident that my strong analytical skills and experience in applying various ML techniques will allow me to thrive in a research setting.
 
