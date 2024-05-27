@@ -24,16 +24,21 @@ linkedin_username: kartikeyavi
 # about_title: About Me
 about_profile_image: images/Profile Picture.jpg
 about_content: | # this will include new lines to allow paragraphs
-  I'm Kartikeya Singh, a machine learning researcher with 3 years of industry experience and a burning desire to push the boundaries of the field. My journey in ML began at CyberPWN, where I developed models for malware detection and clustering. This experience solidified my foundation and ignited a passion for tackling complex problems with cutting-edge solutions.
+  Fueled by a lifelong fascination with data and a knack for untangling complex equations, I'm Kartikeya Singh, a Machine Learning researcher with a passion for innovation. I've been fascinated by the world of data and equations, since I could remember. When I discovered Machine Learning (ML), it was a revelation. It allowed me to bridge the gap between my analytical instincts and real-world applications. 
 
-  At CDAC, I honed my skills in computer vision and explored various projects, further deepening my understanding of machine learning.  My most recent role at the Digital Group allowed me to delve into the fascinating world of natural language processing (NLP). This diverse exposure has equipped me with a well-rounded skillset across multiple ML domains.
+  My passion for ML led me on a journey of exploration. I honed my skills at CyberPWN, building models to detect and categorize malware. At CDAC, I honed my skills in computer vision and explored various projects, further deepening my understanding of machine learning.  My most recent role at the Digital Group allowed me to delve into the fascinating world of natural language processing (NLP). This diverse exposure has equipped me with a well-rounded skillset across multiple ML domains.
 
-  Driven by an insatiable curiosity and a love for innovation, I'm now transitioning my focus towards research. I thrive on delving into the mathematical underpinnings of ML algorithms and original research papers to uncover new applications and solutions.  Attending conferences has broadened my academic vision, and I'm actively seeking opportunities as a Research Fellow or Research Assistant (RA) to fully immerse myself in the research landscape.
+  However, my true calling lies in research. I thrive on the constant quest for innovation. My greatest joy comes from uncovering new ideas and applying them to solve problems in creative ways. Conferences further ignited my love for academia, and I'm currently delving into the world of ML research. I'm meticulously studying algorithms through their mathematical foundations and original research papers.
 
-  My Research Interests:
+  My Research Interests include:
+
   - Machine Learning
   - Computer Vision
   - Natural Language Processing
+
+  Driven by a deep desire to push the boundaries of ML innovation, I am actively pursuing a research career.  The opportunity to delve deeper into the theoretical underpinnings of Machine Learning algorithms through in-depth study of original research papers excites me immensely.  I am confident that my strong analytical skills and experience in applying various ML techniques will allow me to thrive in a research setting.
+
+  Let's connect! Feel free to reach out using the email address or phone number provided in the header.
 
 
 
@@ -92,7 +97,7 @@ content:
         link: https://www.thedigitalgroup.com/
         # link_text: boringcompany.com
         sub_title: Software Trainee
-        caption: October 2022 - March 2023
+        caption: October 2023 - March 2024
         # quote: >
         #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
         description: | # this will include new lines to allow paragraphs
@@ -119,7 +124,7 @@ content:
       - layout: left
         title: Center for Development of Advanced Computing, Pune
         sub_title: Post Graduate - Diploma in Big Data Analytics
-        caption: March - September 2023
+        caption: March 2023 - September 2023
         # quote: >
         #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
         description: | # this will include new lines to allow paragraphs
