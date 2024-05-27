@@ -43,6 +43,30 @@ about_content: | # this will include new lines to allow paragraphs
 
 
 content:
+  - title: Key Skills # Title for the section
+      layout: list # Type of content section (list/text)
+      content: 
+        - layout: left
+          title: Programing Languages
+          description: | # this will include new lines to allow paragraphs
+            - Python
+              - *Data Science:* Numpy,  Pandas, Matplotlib, Seaborn
+              - *Web Development:* Django, Flask and Selenium
+              - Scikit Learn
+              - *Advanced Machine Learning:* Keras, OpenCV, Scikit-Learn, OpenCV, Gensim and NLTK
+            - R
+            - Java
+            - C / C++
+            - SQL
+        - layout: left
+          title: Theoretical Domains
+          description: |
+            - *Mathematics:* Probability, Statistics, Linear Algebra and Calculus (Basic) 
+            - *Computer Science:* Linux, Database Management and Cloud Computing (Basic)
+            - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics and Big Data (Basics).
+            - *Artificial Intelligence:* Machine Learning, Deep Learning, Model Optimisation, Commputer Vision and Natural Language Processing
+
+
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -88,20 +112,7 @@ content:
             - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
             - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
   
-  - title: Keyskills # Title for the section
-    layout: text # Type of content section (list/text)
-    content:
-      # description: |
-      - Progamming Language Skills
-        - Python
-        - Java (Basic)
-        - C/C++ (Basic)
-        - R
-        - Java (Basic)
-        - C/C++ (Basic)
-
-
-
+  
   - title: Work Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -164,6 +175,25 @@ content:
         description: | # this will include new lines to allow paragraphs
           - Secured a commendable 79.8% in the Class 12th CBSE Board Examinations (2019) at Delhi Public School, Jodhpur.
           - Achieved a strong 79.6% in the Class 10th CBSE Board Examinations (2017) at Delhi Public School, Jodhpur.
+    - title: Courses # Title for the section
+      layout: text # Type of content section (list/text)
+      content: | # this will include new lines to allow paragraphs
+        - CS229: Machine Learning by Stanford University and Andrew Ng
+        - Machine Learning Specialization by Stanford University and Andrew Ng
+        - Deep Learning Specialization by Stanford University and Andrew Ng
+        - Google Data Analytics on Coursera
+    - title: Conferences# Title for the section
+      layout: list # Type of content section (list/text)
+      content:
+        - layout: left
+          title: Data Dynamics Summit 2024
+          sub_title: IISER Pune
+          # quote: >
+          #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+          description: | # this will include new lines to allow paragraphs
+            - Expanded knowledge of data science and machine learning trends through participation in IISER Pune's Data Dynamics Summit.
+            - Gained exposure to cutting-edge research in India by observing presentations from leading researchers at TIFR, IITs, and IISERs.
+            - Networked with prominent researchers in various fields, including quantum computing, econophysics, physics-informed neural networks (PINNs), and healthcare applications of machine learning.
 # Footer
 footer_show_references: false
 # references_title: References on request (Override references text)
