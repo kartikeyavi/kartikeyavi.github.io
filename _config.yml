@@ -138,6 +138,14 @@ content:
         #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
         description: | # this will include new lines to allow paragraphs
           At the cutting edge of cybersecurity, I played a pivotal role in integrating machine learning to bolster network defenses. My focus areas included:
+          - tiss
+          - tiss
+          - tiss
+          - tiss
+          - tiss
+          - tiss
+          - tiss
+          - tiss
           - Automated Anomaly Detection: I spearheaded the implementation of machine learning algorithms to continuously analyze network activity. This included traffic patterns, user behavior, and IP data. By establishing baselines for normal activity, the algorithms could identify deviations in real-time, allowing for swift intervention and potential breach prevention.
           - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.   
   
