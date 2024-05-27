@@ -91,14 +91,14 @@ content:
   - title: Keyskills # Title for the section
     layout: text # Type of content section (list/text)
     content:
-      description: |
-        - Progamming Language Skills
-          - Python
-          - Java (Basic)
-          - C/C++ (Basic)
-          - R
-          - Java (Basic)
-          - C/C++ (Basic)
+      # description: |
+      - Progamming Language Skills
+        - Python
+        - Java (Basic)
+        - C/C++ (Basic)
+        - R
+        - Java (Basic)
+        - C/C++ (Basic)
 
 
 
