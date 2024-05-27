@@ -51,8 +51,6 @@ about_content: | # this will include new lines to allow paragraphs
 
   Let's connect! Feel free to reach out using the email address or phone number provided in the header.
 
-
-
 content:
   - title: Key Skills # Title for the section
     layout: list # Type of content section (list/text)
