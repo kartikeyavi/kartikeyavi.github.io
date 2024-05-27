@@ -74,15 +74,6 @@ content:
         link: https://github.com/kartikeyavi/Diabatic-Retinopathy
         link_text: Github Repository
         icon: fab fa-github
-        # additional_links:
-        #   - title:  sproogen/modern-resume-theme
-        #     icon: fab fa-github
-        #     url: github.com/kartikeyavi/resume
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        # quote: >
-        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
           Developed a high-accuracy diabetic retinopathy detection system using Machine Learning
             - Built a scalable Machine Learning pipeline in Python to process over 100GB of retinal angiogram scans for diabetic retinopathy (DR) detection, a leading cause of blindness globally.
@@ -94,16 +85,7 @@ content:
         link: https://github.com/kartikeyavi/Hermes-News-Feed
         link_text: Github Repository
         icon: fab fa-github
-        # additional_links:
-        #   - title:  sproogen/modern-resume-theme
-        #     icon: fab fa-github
-        #     url: github.com/kartikeyavi/resume
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-        # quote: >
-        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
-        description: | # this will include new lines to allow paragraphs
+         description: | # this will include new lines to allow paragraphs
           Developed a daily news aggregator using Python and modern web technologies.
             - Automated news scraping: Built a Python script utilizing Selenium to gather daily news articles from various sources, covering diverse topics.
             - Data pipeline and API development: Implemented a Flask application to ingest scraped articles, store them in an SQL database, and provide an API for access.
@@ -143,17 +125,17 @@ content:
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: left
-        title: Center for Development of Advanced Computing, Pune
-        sub_title: Post Graduate - Diploma in Big Data Analytics
-        caption: March 2023 - September 2023
-        # quote: >
-        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
-        description: | # this will include new lines to allow paragraphs
-          - Graduated with a Distinction (73.89%) in a rigorous PG Diploma program focusing on Machine Learning, Natural Language Processing, Data Science, and Artificial Intelligence.
-          - Demonstrated a passion for independent learning by actively exploring Computer Vision and related topics beyond the curriculum.
-          - Sought out mentorship by consistently engaging with instructors with over 28 years of experience, further deepening my understanding of various topics. This proactive approach was the most rewarding aspect of my program and ignited my interest in a research-oriented career.
-          - Exceeded expectations by completing advanced final projects that went beyond the scope of the syllabus, showcasing my ability to tackle complex problems independently.
+      # - layout: left
+      #   title: Center for Development of Advanced Computing, Pune
+      #   sub_title: Post Graduate - Diploma in Big Data Analytics
+      #   caption: March 2023 - September 2023
+      #   # quote: >
+      #   #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+      #   description: | # this will include new lines to allow paragraphs
+      #     - Graduated with a Distinction (73.89%) in a rigorous PG Diploma program focusing on Machine Learning, Natural Language Processing, Data Science, and Artificial Intelligence.
+      #     - Demonstrated a passion for independent learning by actively exploring Computer Vision and related topics beyond the curriculum.
+      #     - Sought out mentorship by consistently engaging with instructors with over 28 years of experience, further deepening my understanding of various topics. This proactive approach was the most rewarding aspect of my program and ignited my interest in a research-oriented career.
+      #     - Exceeded expectations by completing advanced final projects that went beyond the scope of the syllabus, showcasing my ability to tackle complex problems independently.
       - layout: left
         title: KIIT University
         sub_title: B. Tech in Information Technology
@@ -180,18 +162,18 @@ content:
         - Deep Learning Specialization by Stanford University and Andrew Ng
         - Google Data Analytics on Coursera
 
-    # - title: Conferences# Title for the section
-    #   layout: list # Type of content section (list/text)
-    #   content:
-    #     - layout: left
-    #       title: Data Dynamics Summit 2024
-    #       sub_title: IISER Pune
-    #       # quote: >
-    #       #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
-    #       description: | # this will include new lines to allow paragraphs
-    #         - Expanded knowledge of data science and machine learning trends through participation in IISER Pune's Data Dynamics Summit.
-    #         - Gained exposure to cutting-edge research in India by observing presentations from leading researchers at TIFR, IITs, and IISERs.
-    #         - Networked with prominent researchers in various fields, including quantum computing, econophysics, physics-informed neural networks (PINNs), and healthcare applications of machine learning.
+    - title: Conferences# Title for the section
+      layout: list # Type of content section (list/text)
+      content:
+        - layout: left
+          title: Data Dynamics Summit 2024
+          sub_title: IISER Pune
+          # quote: >
+          #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+          description: | # this will include new lines to allow paragraphs
+            - Expanded knowledge of data science and machine learning trends through participation in IISER Pune's Data Dynamics Summit.
+            - Gained exposure to cutting-edge research in India by observing presentations from leading researchers at TIFR, IITs, and IISERs.
+            - Networked with prominent researchers in various fields, including quantum computing, econophysics, physics-informed neural networks (PINNs), and healthcare applications of machine learning.
 # Footer
 footer_show_references: false
 # references_title: References on request (Override references text)
