@@ -1,6 +1,6 @@
 # Site
 repository: kartikeyavi/modern-resume-theme
-favicon: images/favicon.ico
+favicon: images/KS_Logo.png
 
 
 # Content configuration version
@@ -21,10 +21,10 @@ linkedin_username: kartikeyavi
 
 additional_links:
 - title: Cover Letter
-  icon: images/CL Logo.png
+  icon: images/CL_Logo.png
   url: https://www.canva.com/design/DAF-bYwdVg8/976STYAkYYta_lSIR57erw/view?utm_content=DAF-bYwdVg8&utm_campaign=designshare&utm_medium=link&utm_source=editor
 - title: Curriculum vitae
-  icon: images/CV Logo
+  icon: images/CV_Logo
   url: https://www.canva.com/design/DAGAhku-zvQ/isp871808WP4brRw6DlvPg/view?utm_content=DAGAhku-zvQ&utm_campaign=designshare&utm_medium=link&utm_source=editor
 
 # About Section
