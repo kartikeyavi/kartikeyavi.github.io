@@ -154,7 +154,7 @@ content:
       - Deep Learning Specialization by Stanford University and Andrew Ng
       - Google Data Analytics on Coursera
 
-  - title: Conferences# Title for the section
+  - title: Conferences # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
