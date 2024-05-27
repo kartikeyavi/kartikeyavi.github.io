@@ -66,79 +66,79 @@ content:
           - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics and Big Data (Basics).
           - *Artificial Intelligence:* Machine Learning, Deep Learning, Model Optimisation, Commputer Vision and Natural Language Processing
 
-  # - title: Projects # Title for the section
-  #   layout: list # Type of content section (list/text)
-  #   content:
-  #     - layout: left
-  #       title: Diabetic Retinopathy Detection using Retinal Angiogram
-  #       link: https://github.com/kartikeyavi/Diabatic-Retinopathy
-  #       link_text: Github Repository
-  #       icon: fab fa-github
-  #       # additional_links:
-  #       #   - title:  sproogen/modern-resume-theme
-  #       #     icon: fab fa-github
-  #       #     url: github.com/kartikeyavi/resume
-  #         # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-  #         #   icon: fab fa-github
-  #         #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-  #       # quote: >
-  #       #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
-  #       description: | # this will include new lines to allow paragraphs
-  #         Developed a high-accuracy diabetic retinopathy detection system using Machine Learning
-  #           - Built a scalable Machine Learning pipeline in Python to process over 100GB of retinal angiogram scans for diabetic retinopathy (DR) detection, a leading cause of blindness globally.
-  #           - Implemented and compared various image pre-processing techniques (filters, cropping, normalization) to optimize Convolutional Neural Network (CNN) input for superior performance.
-  #           - Designed and trained a CNN model achieving >90% accuracy in DR detection using TensorFlow, NumPy, OpenCV, and scikit-learn libraries.
-  #           - Experimented with diverse CNN architectures (convolutional, pooling, dense layers) and activation functions (ReLU, tanh, sigmoid) to achieve optimal results.
-  #     - layout: left
-  #       title: Hermes News Feed
-  #       link: https://github.com/kartikeyavi/Hermes-News-Feed
-  #       link_text: Github Repository
-  #       icon: fab fa-github
-  #       # additional_links:
-  #       #   - title:  sproogen/modern-resume-theme
-  #       #     icon: fab fa-github
-  #       #     url: github.com/kartikeyavi/resume
-  #         # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-  #         #   icon: fab fa-github
-  #         #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-  #       # quote: >
-  #       #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
-  #       description: | # this will include new lines to allow paragraphs
-  #         Developed a daily news aggregator using Python and modern web technologies.
-  #           - Automated news scraping: Built a Python script utilizing Selenium to gather daily news articles from various sources, covering diverse topics.
-  #           - Data pipeline and API development: Implemented a Flask application to ingest scraped articles, store them in an SQL database, and provide an API for access.
-  #           - Search functionality: Enhanced the API to return search results based on user queries.
-  #           - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
-  #           - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
-  
-  
-  - title: Work Experience # Title for the section
+  - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: The Digital Group
-        link: https://www.thedigitalgroup.com/
-        # link_text: boringcompany.com
-        sub_title: Software Trainee
-        caption: October 2023 - March 2024
+        title: Diabetic Retinopathy Detection using Retinal Angiogram
+        link: https://github.com/kartikeyavi/Diabatic-Retinopathy
+        link_text: Github Repository
+        icon: fab fa-github
+        # additional_links:
+        #   - title:  sproogen/modern-resume-theme
+        #     icon: fab fa-github
+        #     url: github.com/kartikeyavi/resume
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         # quote: >
-        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          - Leveraged machine learning algorithms like K-Means, BIRCH, and DBSCAN to achieve an accuracy of 85% in document clustering. This intelligent grouping of similar documents facilitated faster information retrieval and analysis by researchers.
-          - To address the complexities of medical/research code, I constructed and trained robust Natural Language Processing (NLP) models using Random Forest and XGBoost algorithms. These models achieved a remarkable accuracy of 98% on a massive dataset of over 150,000 code lines, significantly streamlining the analysis process for researchers.
-          - Furthermore, I meticulously optimized vectorization models like Word2Vec and Doc2Vec, resulting in a 20-30% improvement in model efficiency. This translates to reduced processing time and lower resource consumption, making the system more scalable and cost-effective.
+          Developed a high-accuracy diabetic retinopathy detection system using Machine Learning
+            - Built a scalable Machine Learning pipeline in Python to process over 100GB of retinal angiogram scans for diabetic retinopathy (DR) detection, a leading cause of blindness globally.
+            - Implemented and compared various image pre-processing techniques (filters, cropping, normalization) to optimize Convolutional Neural Network (CNN) input for superior performance.
+            - Designed and trained a CNN model achieving >90% accuracy in DR detection using TensorFlow, NumPy, OpenCV, and scikit-learn libraries.
+            - Experimented with diverse CNN architectures (convolutional, pooling, dense layers) and activation functions (ReLU, tanh, sigmoid) to achieve optimal results.
       - layout: left
-        title: CyberPWN Technologies
-        link: https://www.cyberpwn.com/
-        # link_text: boringcompany.com
-        sub_title: Data Science Intern
-        caption: February 2022 - March 2023
+        title: Hermes News Feed
+        link: https://github.com/kartikeyavi/Hermes-News-Feed
+        link_text: Github Repository
+        icon: fab fa-github
+        # additional_links:
+        #   - title:  sproogen/modern-resume-theme
+        #     icon: fab fa-github
+        #     url: github.com/kartikeyavi/resume
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         # quote: >
-        #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        #   This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
         description: | # this will include new lines to allow paragraphs
-          At the cutting edge of cybersecurity, I played a pivotal role in integrating machine learning to bolster network defenses. My focus areas included:
-          - Automated Anomaly Detection: I spearheaded the implementation of machine learning algorithms to continuously analyze network activity. This included traffic patterns, user behavior, and IP data. By establishing baselines for normal activity, the algorithms could identify deviations in real-time, allowing for swift intervention and potential breach prevention.
-          - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.   
+          Developed a daily news aggregator using Python and modern web technologies.
+            - Automated news scraping: Built a Python script utilizing Selenium to gather daily news articles from various sources, covering diverse topics.
+            - Data pipeline and API development: Implemented a Flask application to ingest scraped articles, store them in an SQL database, and provide an API for access.
+            - Search functionality: Enhanced the API to return search results based on user queries.
+            - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
+            - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
+  
+  
+  # - title: Work Experience # Title for the section
+  #   layout: list # Type of content section (list/text)
+  #   content:
+  #     - layout: left
+  #       title: The Digital Group
+  #       link: https://www.thedigitalgroup.com/
+  #       # link_text: boringcompany.com
+  #       sub_title: Software Trainee
+  #       caption: October 2023 - March 2024
+  #       # quote: >
+  #       #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+  #       description: | # this will include new lines to allow paragraphs
+  #         - Leveraged machine learning algorithms like K-Means, BIRCH, and DBSCAN to achieve an accuracy of 85% in document clustering. This intelligent grouping of similar documents facilitated faster information retrieval and analysis by researchers.
+  #         - To address the complexities of medical/research code, I constructed and trained robust Natural Language Processing (NLP) models using Random Forest and XGBoost algorithms. These models achieved a remarkable accuracy of 98% on a massive dataset of over 150,000 code lines, significantly streamlining the analysis process for researchers.
+  #         - Furthermore, I meticulously optimized vectorization models like Word2Vec and Doc2Vec, resulting in a 20-30% improvement in model efficiency. This translates to reduced processing time and lower resource consumption, making the system more scalable and cost-effective.
+  #     - layout: left
+  #       title: CyberPWN Technologies
+  #       link: https://www.cyberpwn.com/
+  #       # link_text: boringcompany.com
+  #       sub_title: Data Science Intern
+  #       caption: February 2022 - March 2023
+  #       # quote: >
+  #       #   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+  #       description: | # this will include new lines to allow paragraphs
+  #         At the cutting edge of cybersecurity, I played a pivotal role in integrating machine learning to bolster network defenses. My focus areas included:
+  #         - Automated Anomaly Detection: I spearheaded the implementation of machine learning algorithms to continuously analyze network activity. This included traffic patterns, user behavior, and IP data. By establishing baselines for normal activity, the algorithms could identify deviations in real-time, allowing for swift intervention and potential breach prevention.
+  #         - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.   
   
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
