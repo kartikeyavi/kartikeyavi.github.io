@@ -11,7 +11,11 @@ name:  KARTIKEYA SINGH
 title: Machine Learning Developer
 email: kartikeyavia2r@gmail.com  
 phone: +91-7339910494
-
+websites:
+  - title: Cover Letter
+    website: https://www.canva.com/design/DAF-bYwdVg8/976STYAkYYta_lSIR57erw/view?utm_content=DAF-bYwdVg8&utm_campaign=designshare&utm_medium=link&utm_source=editor
+  - title: Curriculum Vitae
+    website: https://www.canva.com/design/DAGAhku-zvQ/isp871808WP4brRw6DlvPg/view?utm_content=DAGAhku-zvQ&utm_campaign=designshare&utm_medium=link&utm_source=editor
 # Dark Mode (true/false/never)
 darkmode: never
 
@@ -20,13 +24,13 @@ github_username:  kartikeyavi
 linkedin_username: kartikeyavi
 
 
-additional_links:
-- title: Cover Letter
-  icon: https://github.com/kartikeyavi/kartikeyavi.github.io/blob/3110a5831c52264d31c427b0a1a68216aee60369/images/CL_Logo.png
-  url: https://www.canva.com/design/DAF-bYwdVg8/976STYAkYYta_lSIR57erw/view?utm_content=DAF-bYwdVg8&utm_campaign=designshare&utm_medium=link&utm_source=editor
-- title: Curriculum vitae
-  icon: https://github.com/kartikeyavi/kartikeyavi.github.io/blob/3110a5831c52264d31c427b0a1a68216aee60369/images/CV_Logo.png
-  url: https://www.canva.com/design/DAGAhku-zvQ/isp871808WP4brRw6DlvPg/view?utm_content=DAGAhku-zvQ&utm_campaign=designshare&utm_medium=link&utm_source=editor
+# additional_links:
+# - title: Cover Letter
+#   icon: https://github.com/kartikeyavi/kartikeyavi.github.io/blob/3110a5831c52264d31c427b0a1a68216aee60369/images/CL_Logo.png
+#   url: https://www.canva.com/design/DAF-bYwdVg8/976STYAkYYta_lSIR57erw/view?utm_content=DAF-bYwdVg8&utm_campaign=designshare&utm_medium=link&utm_source=editor
+# - title: Curriculum vitae
+#   icon: https://github.com/kartikeyavi/kartikeyavi.github.io/blob/3110a5831c52264d31c427b0a1a68216aee60369/images/CV_Logo.png
+#   url: https://www.canva.com/design/DAGAhku-zvQ/isp871808WP4brRw6DlvPg/view?utm_content=DAGAhku-zvQ&utm_campaign=designshare&utm_medium=link&utm_source=editor
 
 # About Section
 # about_title: About Me
