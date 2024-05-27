@@ -128,7 +128,6 @@ content:
           - Leveraged machine learning algorithms like K-Means, BIRCH, and DBSCAN to achieve an accuracy of 85% in document clustering. This intelligent grouping of similar documents facilitated faster information retrieval and analysis by researchers.
           - To address the complexities of medical/research code, I constructed and trained robust Natural Language Processing (NLP) models using Random Forest and XGBoost algorithms. These models achieved a remarkable accuracy of 98% on a massive dataset of over 150,000 code lines, significantly streamlining the analysis process for researchers.
           - Furthermore, I meticulously optimized vectorization models like Word2Vec and Doc2Vec, resulting in a 20-30% improvement in model efficiency. This translates to reduced processing time and lower resource consumption, making the system more scalable and cost-effective.
- 
       - layout: left
         title: CyberPWN Technologies
         link: https://www.cyberpwn.com/
@@ -140,8 +139,8 @@ content:
         description: | # this will include new lines to allow paragraphs
           At the cutting edge of cybersecurity, I played a pivotal role in integrating machine learning to bolster network defenses. My focus areas included:
           - Automated Anomaly Detection: I spearheaded the implementation of machine learning algorithms to continuously analyze network activity. This included traffic patterns, user behavior, and IP data. By establishing baselines for normal activity, the algorithms could identify deviations in real-time, allowing for swift intervention and potential breach prevention.
-          - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.
-   
+          - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.   
+  
   - title: Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
