@@ -44,27 +44,27 @@ about_content: | # this will include new lines to allow paragraphs
 
 content:
   - title: Key Skills # Title for the section
-      layout: list # Type of content section (list/text)
-      content: 
-        - layout: left
-          title: Programing Languages
-          description: | # this will include new lines to allow paragraphs
-            - Python
-              - *Data Science:* Numpy,  Pandas, Matplotlib, Seaborn
-              - *Web Development:* Django, Flask and Selenium
-              - Scikit Learn
-              - *Advanced Machine Learning:* Keras, OpenCV, Scikit-Learn, OpenCV, Gensim and NLTK
-            - R
-            - Java
-            - C / C++
-            - SQL
-        - layout: left
-          title: Theoretical Domains
-          description: |
-            - *Mathematics:* Probability, Statistics, Linear Algebra and Calculus (Basic) 
-            - *Computer Science:* Linux, Database Management and Cloud Computing (Basic)
-            - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics and Big Data (Basics).
-            - *Artificial Intelligence:* Machine Learning, Deep Learning, Model Optimisation, Commputer Vision and Natural Language Processing
+    layout: list # Type of content section (list/text)
+    content: 
+      - layout: left
+        title: Programing Languages
+        description: | # this will include new lines to allow paragraphs
+          - Python
+            - *Data Science:* Numpy,  Pandas, Matplotlib, Seaborn
+            - *Web Development:* Django, Flask and Selenium
+            - Scikit Learn
+            - *Advanced Machine Learning:* Keras, OpenCV, Scikit-Learn, OpenCV, Gensim and NLTK
+          - R
+          - Java
+          - C / C++
+          - SQL
+      - layout: left
+        title: Theoretical Domains
+        description: |
+          - *Mathematics:* Probability, Statistics, Linear Algebra and Calculus (Basic) 
+          - *Computer Science:* Linux, Database Management and Cloud Computing (Basic)
+          - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics and Big Data (Basics).
+          - *Artificial Intelligence:* Machine Learning, Deep Learning, Model Optimisation, Commputer Vision and Natural Language Processing
 
 
   - title: Projects # Title for the section
