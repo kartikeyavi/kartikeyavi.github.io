@@ -87,11 +87,23 @@ content:
             - Search functionality: Enhanced the API to return search results based on user queries.
             - NLP-powered article analysis: Leveraged Natural Language Processing (NLP) techniques to automatically tag scraped articles for improved organization.
             - Team leadership: Led the development of a user-friendly frontend using HTML, CSS, JavaScript, and React, showcasing the API's functionalities.
+  
+  - title: Keyskills # Title for the section
+    layout: text # Type of content section (list/text)
+    content:
+      description: 
+        - Progamming Language Skills
+          - Python
+
+          - R
+          | - Java (Basic)
+            - C/C++ (Basic)
+
+
 
   - title: Work Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
-
       - layout: left
         title: The Digital Group
         link: https://www.thedigitalgroup.com/
