@@ -91,7 +91,7 @@ content:
   - title: Keyskills # Title for the section
     layout: text # Type of content section (list/text)
     content:
-      description: 
+      description: |
         - Progamming Language Skills
           - Python
 
