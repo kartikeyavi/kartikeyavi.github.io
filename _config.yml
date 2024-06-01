@@ -11,11 +11,11 @@ name:  KARTIKEYA SINGH
 title: Machine Learning Developer
 email: kartikeyavia2r@gmail.com  
 phone: +91-7339910494
-websites:
-  - title: Cover Letter (Click Here)
-    website: https://drive.google.com/file/d/18tpfxGV_wgdkafjtx1GhmdsDiLY00ieU/view?usp=drive_link
-  - title: Curriculum Vitae (Click Here)
-    website: https://drive.google.com/file/d/12zoDnUPQqHKzQOwwRPkOSYwq4mYZ7gcs/view?usp=drive_link
+# websites:
+#   - title: Cover Letter (Click Here)
+#     website: https://drive.google.com/file/d/18tpfxGV_wgdkafjtx1GhmdsDiLY00ieU/view?usp=drive_link
+#   - title: Curriculum Vitae (Click Here)
+#     website: https://drive.google.com/file/d/12zoDnUPQqHKzQOwwRPkOSYwq4mYZ7gcs/view?usp=drive_link
 
 # Dark Mode (true/false/never)
 darkmode: never
