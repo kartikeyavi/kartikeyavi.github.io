@@ -68,29 +68,40 @@ content:
             - *Data Science:* Numpy,  Pandas, Matplotlib, Seaborn
             - *Web Development:* Django, Flask and Selenium
             - Scikit Learn
-            - *Advanced Machine Learning:* Keras, OpenCV, Scikit-Learn, OpenCV, Gensim and NLTK
+            - *Advanced Machine Learning:* Keras, Pytorch, Tensorflow, OpenCV, Scikit-Learn, OpenCV, Gensim and NLTK
+            - *3D Computer Vision:* Open3d, Pointnet, Poinnet
           - R
-          - Java
+          - Matlab
           - C / C++
           - SQL
       - layout: left
         title: Theoretical Domains
         description: |
-          - *Mathematics:* Probability, Statistics, Linear Algebra and Calculus (Basic) 
-          - *Computer Science:* Linux, Database Management and Cloud Computing (Basic)
-          - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics and Big Data (Basics).
-          - *Artificial Intelligence:* Machine Learning, Deep Learning, Model Optimisation, Commputer Vision and Natural Language Processing
+          - *Mathematics:* Probability, Statistics, Linear Algebra and Calculus
+          - *Data Science:* Data Vizualisation, Web Scraping, Data Analytics, Database Management and Linux
+          - *Artificial Intelligence:* Machine Learning, Deep Learning,Commputer Vision and Natural Language Processing
+          - *AI Integrations:* Medical Image Processing, Deep Learning frameworks for 3D Geometry
 
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
+      - layout: left
+        title: Lumbar Spine Degeneration Classifier using Machine Learning and Computer Vision (Inprogress)
+        #link: https://github.com/kartikeyavi/Diabatic-Retinopathy
+        #link_text: Github Repository
+        #icon: fab fa-github
+        description: | # this will include new lines to allow paragraphs
+          Developing a Lumbar Spine Degeneration Classifier using Machine Learning and Computer Vision
+            - Converted DICOM files to NIFTI format to facilitate volumetric data processing and streamline tensor conversion.
+            - Developed machine learning pipelines to process tensors using advanced 3D computer vision frameworks.
+            - Classified individual vertebrae of the lumbar spine by analyzing processed scans and training a machine learning model.
       - layout: left
         title: Diabetic Retinopathy Detection using Retinal Angiogram
         link: https://github.com/kartikeyavi/Diabatic-Retinopathy
         link_text: Github Repository
         icon: fab fa-github
         description: | # this will include new lines to allow paragraphs
-          Developed a high-accuracy diabetic retinopathy detection system using Machine Learning
+          Developed a high-accuracy diabetic retinopathy detection system using Machine Learning and Computer Vision
             - Built a scalable Machine Learning pipeline in Python to process over 100GB of retinal angiogram scans for diabetic retinopathy (DR) detection, a leading cause of blindness globally.
             - Implemented and compared various image pre-processing techniques (filters, cropping, normalization) to optimize Convolutional Neural Network (CNN) input for superior performance.
             - Designed and trained a CNN model achieving >90% accuracy in DR detection using TensorFlow, NumPy, OpenCV, and scikit-learn libraries.
@@ -113,6 +124,17 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
+        title: Indian Institute of Technology, Kharagpur
+        link: https://www.thedigitalgroup.com/
+        sub_title: Researcher
+        caption: August 2024 - Present
+        description: | # this will include new lines to allow paragraphs
+          - Conducting research aimed at enhancing the efficiency of Pairwise 3D Reconstruction specifically for Agricultural produce.
+          - Studying and applying insights from various research papers to grasp advancements in point cloud registration.
+          - Planing to refine neural networks to boost the effectiveness of the registration process.
+          - Researching under Prof. Ayan Chaudhary at the Visual Information Processing Lab, IIT Kharagpur, in an 89-day research position.
+          - Part of the SERB-funded project titled "3D Reconstruction of Deformable Plants for Smart Farming and Remote Sensing Applications."   
+      - layout: left
         title: The Digital Group
         link: https://www.thedigitalgroup.com/
         sub_title: Software Trainee
@@ -131,7 +153,7 @@ content:
           - Automated Anomaly Detection: I spearheaded the implementation of machine learning algorithms to continuously analyze network activity. This included traffic patterns, user behavior, and IP data. By establishing baselines for normal activity, the algorithms could identify deviations in real-time, allowing for swift intervention and potential breach prevention.
           - Data-Driven Threat Classification: Leveraging statistical modeling techniques, I developed a system for clustering and classifying network breaches. This system categorized security incidents based on their characteristics, enabling faster prioritization and response. This not only streamlined the security team's workflow but also minimized potential damage from lingering threats.   
   
-  - title: Education # Title for the section
+  - title: Education # Title for the sectionsudo
     layout: list # Type of content section (list/text)
     content:
       - layout: left
@@ -166,8 +188,6 @@ content:
     content: | # this will include new lines to allow paragraphs
       - CS229: Machine Learning by Stanford University and Andrew Ng
       - Machine Learning Specialization by Stanford University and Andrew Ng
-      - Deep Learning Specialization by Stanford University and Andrew Ng
-      - Google Data Analytics on Coursera
 
   - title: Conferences # Title for the section
     layout: list # Type of content section (list/text)
