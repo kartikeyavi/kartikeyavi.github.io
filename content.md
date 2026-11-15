@@ -109,3 +109,8 @@ I'm an AI researcher currently pursuing an Advanced Master's in Artificial Intel
 - Awarded 18th place in the IGNUS Talent Search Exam, hosted by VCCE and IIT Jodhpur.
 - Gold medallist in the International English Olympiad, organised by the British Council.
 - 2016: Completed hands-on training in quadcopter mechanics and flight stability at IGNUS.
+
+## Contact
+As a researcher, I believe that diverse perspectives are vital for meaningful progress. I'm always open to engaging with new ideas and hearing different viewpoints. Feel free to connect with me on LinkedIn or reach out via Gmail — I’d be glad to hear from you.
+
+Looking forward to Hear from you!

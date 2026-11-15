@@ -112,10 +112,18 @@
       flyStart: 0.6,       // where on the loop the flight begins (0 = near end, turning; ~0.6 = near end, heading forward)
 
       // Docked at a section node: the camera hovers in front of and above it,
-      // looking down, so the flat network spreads out behind the card.
+      // looking down, so the network spreads out behind the card.
       dockDistance: 8,     // how far in front of the node
       dockHeight: 5.5,     // how far above the node
       driftAmount: 1,      // gentle sway while reading (0 = perfectly still)
+
+      // While a card is being read, its neuron sits beside the card instead of
+      // hiding behind it. If the screen is too narrow for that (phones), it
+      // sits above the card instead.
+      nodeSide: 'left',    // 'left' or 'right' of the card
+      nodeSideRoom: 170,   // px of free space needed beside the card to use the side position
+      nodeSideGap: 130,    // px from the card's edge to the centre of the neuron (at most half the free space)
+      nodeAbove: 0.4,      // narrow screens: how far above the middle of the screen, as a fraction of its height
 
       // Travelling between two section nodes.
       riseHeight: 6,       // how high the camera climbs before swooping down
@@ -131,6 +139,7 @@
       arriveAt: 0.3,   // camera is fully docked once the card's top edge reaches 30% of the screen height
       departAt: 0.6,   // camera starts leaving once the card's bottom edge rises above 60% of the screen height
       jumpOffset: 0.14, // mini map jumps place the card's top edge 14% from the top of the screen
+      jumpOffsetNarrow: 0.22, // same, on narrow screens, leaving room for the neuron above the card
     },
 
     mobileQuery: '(max-width: 800px)', // keep in sync with the media query in style.css
@@ -168,7 +177,8 @@
     { id: 'publications', sources: ['Publications'],                      title: 'first',  slot:  2, render: 'publications' },
     { id: 'projects',     sources: ['Projects'],                          title: 'first',  slot: -1, render: 'projects' },
     { id: 'more',         sources: ['Courses', 'Conferences', 'Awards'],  title: 'joined', slot:  1, render: 'more' },
-    { id: 'contact',      sources: [], label: 'Contact',                  slot: 0, render: 'contact' }, // built from the front matter
+    // Contact always exists: links come from the front matter, the optional text from "## Contact".
+    { id: 'contact',      sources: ['Contact'], label: 'Contact', always: true, slot: 0, render: 'contact' },
   ];
   const EXTRA_SECTION_SLOTS = [-1, 1, 0, 2, -2]; // slots handed to unlisted "## Headings", in turn
 
@@ -232,6 +242,22 @@
   };
 
   if (new URLSearchParams(location.search).has('debug')) window.__site = site;
+
+  /* Where the current section's neuron should sit on screen while its card is
+     being read, in px from the middle of the screen. Worked out from the real
+     width of the cards, so it follows any change to --card-width in style.css. */
+  function nodePlacement() {
+    const C = CONFIG.camera;
+    const W = window.innerWidth, H = window.innerHeight;
+    const card = site.stops[0] && site.stops[0].card;
+    const cardW = card ? card.offsetWidth : W;
+    const room = (W - cardW) / 2;
+    if (room >= C.nodeSideRoom) {
+      const x = cardW / 2 + Math.min(room / 2, C.nodeSideGap);
+      return { x: C.nodeSide === 'right' ? x : -x, y: 0, above: false };
+    }
+    return { x: 0, y: -H * C.nodeAbove, above: true };
+  }
 
   /* ------------------------------------------------------------------------
      4. content.md parser
@@ -477,7 +503,7 @@
 
     generic(secs) { return genericHTML(secs[0], 3, { labLine: true }); },
 
-    // The final node: email, location, every profile link, CV, footer.
+    // The final node: the "## Contact" text (if any), email, location, every profile link, CV, footer.
     contact(secs, data) {
       const meta = data.meta;
       const rows = [];
@@ -486,13 +512,13 @@
         if (l) rows.push(`<li>${icon(def.key)}<span class="contact-label">${esc(def.label)}</span><a href="${esc(l.href)}">${esc(l.text)}</a></li>`);
       });
       if (meta.location) rows.push(`<li>${icon('location')}<span class="contact-label">Location</span><span>${esc(meta.location)}</span></li>`);
-      if (!rows.length && !meta.cv) return '';
+      const intro = secs.length ? `<div class="prose contact-intro">${genericHTML(secs[0], 3)}</div>` : '';
+      if (!rows.length && !meta.cv && !intro) return '';
       const cv = meta.cv ? `<p><a class="btn" href="${esc(meta.cv)}" download>${icon('cv')}<span>Download CV</span></a></p>` : '';
       const year = new Date().getFullYear();
-      return `<ul class="contact-list">${rows.join('')}</ul>${cv}
+      return `${intro}${rows.length ? `<ul class="contact-list">${rows.join('')}</ul>` : ''}${cv}
         <footer class="site-footer">
           <p>&copy; ${year}${meta.name ? ' ' + esc(meta.name) : ''}</p>
-          <p>This page is generated from a single markdown file.</p>
         </footer>`;
     },
   };
@@ -545,7 +571,7 @@
     SECTIONS.forEach((def) => {
       def.sources.forEach((s) => listed.add(s.toLowerCase()));
       const secs = def.sources.map((s) => data.sections[s.toLowerCase()]).filter(Boolean);
-      if (def.sources.length && !secs.length) return; // missing or empty in content.md -> no card, no node
+      if (def.sources.length && !secs.length && !def.always) return; // missing or empty in content.md -> no card, no node
       const names = secs.map((s) => s.name);
       plan.push({
         def, secs,
@@ -663,6 +689,7 @@
     const vh = window.innerHeight;
     const max = Math.max(1, document.documentElement.scrollHeight - vh);
     heroDepart = Math.min(vh * 0.08, max);
+    const jumpOffset = nodePlacement().above ? CONFIG.scroll.jumpOffsetNarrow : CONFIG.scroll.jumpOffset;
     let prev = heroDepart;
     marks = site.stops.map((s) => {
       // offsetTop/offsetHeight ignore the reveal animation's scale, unlike getBoundingClientRect
@@ -671,7 +698,7 @@
       const bottom = top + s.card.offsetHeight;
       const arrive = clamp(top - vh * CONFIG.scroll.arriveAt, prev, max);
       const depart = clamp(bottom - vh * CONFIG.scroll.departAt, arrive, max);
-      const jump = clamp(top - vh * CONFIG.scroll.jumpOffset, arrive, depart);
+      const jump = clamp(top - vh * jumpOffset, arrive, depart);
       prev = depart;
       return { arrive, depart, jump };
     });
@@ -1002,8 +1029,10 @@
 
     /* ---- Sizing --------------------------------------------------------- */
     let W = 1, H = 1;
+    let place = { x: 0, y: 0 }; // on-screen position of the docked neuron, see nodePlacement()
     function resize() {
       W = window.innerWidth; H = window.innerHeight;
+      place = nodePlacement();
       renderer.setPixelRatio(pixelRatio);
       renderer.setSize(W, H, false);
       camera.aspect = W / H;
@@ -1012,11 +1041,13 @@
       if (motionMode === 'static') renderStill();
     }
 
-    // Shift the picture so the network sits beside (or below) the hero photo.
-    function applyHeroShift(amount) {
+    /* Slide the whole picture sideways or up/down on screen.
+         hero (0..1): the network sits beside (or below) the hero photo.
+         dock (0..1): the section's neuron sits beside (or above) its card. */
+    function applyViewShift(hero, dock) {
       const hasPhoto = !root.classList.contains('no-photo');
-      const sx = hasPhoto && !mqMobile.matches ? W * C.heroShiftX * amount : 0;
-      const sy = hasPhoto && mqMobile.matches ? H * C.heroShiftY * amount : 0;
+      const sx = (hasPhoto && !mqMobile.matches ? W * C.heroShiftX * hero : 0) + place.x * dock;
+      const sy = (hasPhoto && mqMobile.matches ? H * C.heroShiftY * hero : 0) + place.y * dock;
       if (Math.abs(sx) > 0.5 || Math.abs(sy) > 0.5) camera.setViewOffset(W, H, -sx, -sy, W, H);
       else if (camera.view && camera.view.enabled) camera.clearViewOffset();
     }
@@ -1033,7 +1064,7 @@
 
     function renderStill() {
       staticPose(camera.position, camera.quaternion);
-      applyHeroShift(site.active === 0 ? 1 : 0); // beside the photo on the hero, centred behind the cards
+      applyViewShift(site.active === 0 ? 1 : 0, 0); // beside the photo on the hero, centred behind the cards
       updateSectionGlow(0);
       renderer.render(scene, camera);
     }
@@ -1070,7 +1101,7 @@
 
       if (t < 1) fly.u += dt * C.flySpeed;
       poseAt(t, time, camera.position, camera.quaternion);
-      applyHeroShift(1 - smoothstep(0.05, 0.8, t));
+      applyViewShift(1 - smoothstep(0.05, 0.8, t), smoothstep(0.2, 1, t));
       if (signalGeo) updateSignals(dt);
       updateSectionGlow(dt);
       renderer.render(scene, camera);

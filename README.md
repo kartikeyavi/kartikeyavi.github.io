@@ -173,6 +173,9 @@ A paragraph of text.
 
 ## Awards
 - An award.
+
+## Contact
+A short message shown above your links on the last panel. Optional.
 ```
 
 Rules worth knowing:
@@ -181,7 +184,7 @@ Rules worth knowing:
 - Text inside `<!-- ... -->` is ignored.
 - `**bold**`, `*italics*` and `[links](https://...)` work everywhere.
 - A new `## Heading` that the site does not know about still gets its own node, placed just before Contact.
-- Contact is built from the links at the top of the file.
+- The Contact panel always appears. Its links come from the top of the file; the text above them comes from `## Contact` (leave that section out for links only).
 
 ### Photo
 
