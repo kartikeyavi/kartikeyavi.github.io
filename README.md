@@ -1,6 +1,6 @@
 # Neural network resume site
 
-A single scrolling page shaped like a 3D neural network. Each section of the resume sits at its own node; scrolling flies the camera from node to node.
+A single scrolling page shaped like a neural network: a feed-forward diagram (n layers of m neurons, deliberately uneven so it looks grown rather than drawn on a grid) that a 3D camera flies over. Each section of the resume sits at its own node; scrolling flies the camera from node to node.
 
 All text comes from **`content.md`**. To change the site, edit that one file.
 
@@ -198,7 +198,7 @@ Use **Add file → Upload files** in the right folder on GitHub and commit. Afte
 ### Two things that are not in `content.md`
 
 - **Link previews.** LinkedIn, Slack and search engines do not run JavaScript, so the page title, description and preview image they show are written near the top of `index.html`. If your name, headline or domain changes, update those few lines.
-- **Look and layout of the network.** Open `script.js`: the `CONFIG` block at the top sets layer sizes, spacing, camera height and speed, and the `SECTIONS` list maps each `## Heading` to its node (order, and how far left or right the node sits). Colours and fonts are the variables at the top of `style.css`.
+- **Look and layout of the network.** Open `script.js`: the `CONFIG` block at the top sets the number of neurons per layer (`neurons`), how uneven the network is (`irregular`; change `seed` for a different arrangement), spacing, camera height and speed, and the `SECTIONS` list maps each `## Heading` to its node (order, and how far left or right the node sits). Colours and fonts are the variables at the top of `style.css`.
 
 ## 7. Optional: try it in a separate repository first
 

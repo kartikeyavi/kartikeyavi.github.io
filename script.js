@@ -38,47 +38,62 @@
     colors: {
       background: 0x050816,
       node: 0x00fffe,
-      sectionCore: 0xc8ffff, // section nodes get a lighter core so they read as brighter
+      sectionCore: 0xc8ffff, // section nodes get a lighter fill so they read as brighter
     },
 
     /* NETWORK LAYOUT
-       The network is a classic feed-forward diagram laid flat like a landscape:
+       A feed-forward diagram: n layers side by side, m neurons in each, joined
+       to the neurons of the next layer. One row of neurons per layer; nothing
+       is stacked.
 
-         layer 0        layer 1        layer 2   ...   last layer
-         (input,        (1st section)  (2nd section)   (Contact)
-          hero)
-            o   o   o      o   o   o      o   o   o
-            o   o   o      o   O   o      o   o   O        O = section node
-            o   o   o      o   o   o      o   o   o
-         ---------------------------------------------> +z (direction of travel)
+         layer 0     layer 1      layer 2     ...   last layer
+         (input,     (1st         (2nd              (Contact)
+          hero)       section)     section)
+            o           o            o                  o
+            o           O            o                  o        O = section node
+            o           o            o                  O
+            o           o            O                  o
+         ------------------------------------------------> direction of travel
 
-       - There is one layer per visible section, plus the input layer for the hero.
-       - Each layer is a grid: `cols` nodes wide (x axis) by `rows` nodes tall (y axis).
-       - `cols` lists the width of each layer: first value = input layer,
-         last value = final (Contact) layer, the values in between repeat for
-         the layers in the middle.
-       - Every node is joined to the nodes of the next layer that are within
-         `edgeReach` units sideways. Raise it for a denser web, lower for sparser. */
+       - n (layers) is automatic: one per visible section, plus the input
+         layer for the hero. Hide a section in content.md and a layer goes.
+       - m (neurons per layer) is `neurons` below. The same for every layer.
+       - The diagram above is only the starting grid. `irregular` (below) then
+         pushes every neuron off it, sideways, forwards/backwards and up/down,
+         arches and tilts each layer, varies neuron sizes and leaves out some
+         connections, so the result looks grown rather than ruled on paper.
+         Set every value in `irregular` to 0 to get the perfect flat grid back. */
     network: {
-      layerSpacing: 16, // distance between layers
+      layerSpacing: 16,   // distance between layers
       desktop: {
-        rows: 3, cols: [5, 7, 8, 7, 8, 7, 6, 4],
-        colSpacing: 5, rowSpacing: 4.2, edgeReach: 7.6,
-        signals: 34,            // little pulses travelling along edges
-        sphereDetail: 14, maxPixelRatio: 2, antialias: true,
+        neurons: 6,       // m: neurons in each layer
+        neuronSpacing: 5.5,
+        signals: 24,      // little pulses travelling along edges
+        maxPixelRatio: 2, antialias: true,
       },
-      // Phones: fewer nodes, fewer edges, lower resolution.
+      // Phones: fewer neurons per layer and lower resolution.
       mobile: {
-        rows: 2, cols: [3, 4, 5, 4, 5, 4, 4, 3],
-        colSpacing: 5.5, rowSpacing: 4.4, edgeReach: 6,
-        signals: 10,
-        sphereDetail: 8, maxPixelRatio: 1.25, antialias: false,
+        neurons: 4,
+        neuronSpacing: 6,
+        signals: 8,
+        maxPixelRatio: 1.25, antialias: false,
       },
-      nodeRadius: 0.2,
-      sectionNodeRadius: 0.42,
-      sectionRow: 'middle', // which row of the grid holds the section node: 'top' | 'middle' | 'bottom'
-      edgeOpacity: 0.17,
-      pathEdgeOpacity: 0.85, // the edges the camera travels along, section to section
+      irregular: {
+        seed: 11,            // change this number for a different (but repeatable) arrangement
+        scatter: 0.34,       // sideways shift of each neuron, as a fraction of neuronSpacing
+        depth: 0.24,         // forwards/backwards shift, as a fraction of layerSpacing
+        height: 3.4,         // random lift or drop of each neuron
+        bow: 4.5,            // how far a whole layer may arch up or sag in the middle
+        tilt: 0.2,           // how much a whole layer may slope from one side to the other
+        sway: 0.5,           // sideways shift of a whole layer, as a fraction of neuronSpacing
+        sizeVariation: 0.45, // neuron sizes vary by up to this fraction
+        dropout: 0.3,        // fraction of connections left out
+        edgeVariation: 0.65, // how much connection brightness varies (0 = all equal)
+      },
+      nodeRadius: 0.26,
+      sectionNodeRadius: 0.46,
+      edgeOpacity: 0.42,
+      pathEdgeOpacity: 0.9, // the edges the camera travels along, section to section
     },
 
     camera: {
@@ -87,22 +102,23 @@
       // Hero flyover: an endless oval loop above the network (see flyPoint()).
       flyHeight: 18,       // altitude above the network
       flyHeightWave: 2,    // gentle climb and descent
-      flySide: 0.8,        // half-width of the loop, as a fraction of the network half-width
+      flySide: 0.6,        // half-width of the loop, as a fraction of the network half-width
       flyInset: 14,        // the loop turns around this far inside each end of the network
       flySpeed: 0.07,      // radians per second around the loop (lower = slower)
-      flyLookAhead: 0.5,   // how far ahead on the loop the camera looks
-      flyLookInward: 0.35, // 0 = look straight along the path, 1 = always look at the middle of the network
+      flyLookAhead: 0.75,  // how far ahead on the loop the camera looks
+      flyLookInward: 0.5,  // 0 = look straight along the path, 1 = always look at the middle of the network
       flyBank: 0.1,        // how hard it banks into turns
       flyMaxBank: 0.3,     // steepest bank, in radians
       flyStart: 0.6,       // where on the loop the flight begins (0 = near end, turning; ~0.6 = near end, heading forward)
 
-      // Docked at a section node: the camera hovers just in front of it.
-      dockDistance: 7.5,   // how far in front of the node
-      dockHeight: 1.3,     // how far above the node
+      // Docked at a section node: the camera hovers in front of and above it,
+      // looking down, so the flat network spreads out behind the card.
+      dockDistance: 8,     // how far in front of the node
+      dockHeight: 5.5,     // how far above the node
       driftAmount: 1,      // gentle sway while reading (0 = perfectly still)
 
       // Travelling between two section nodes.
-      riseHeight: 7,       // how high the camera climbs before swooping down
+      riseHeight: 6,       // how high the camera climbs before swooping down
       follow: 3.2,         // how quickly the camera catches up with the scroll (higher = snappier)
 
       // While the hero is on screen the view is shifted so the network sits
@@ -137,7 +153,7 @@
                              later sources become sub-headings ("News")
                  'joined' -> card title is all present headings joined
                              ("Courses, Conferences & Awards")
-       slot .... where the section node sits in its layer, in columns left (-)
+       slot .... where the section node sits in its layer, in neurons left (-)
                  or right (+) of the centre. Alternating values make the camera
                  zig-zag across the network as it travels.
        render .. which renderer in part 5 turns the markdown into HTML.
@@ -771,30 +787,33 @@
     /* ---- Build the layers --------------------------------------------- */
     const layerCount = site.stops.length + 1; // input layer + one per section
     const layers = [];
-    for (let i = 0; i < layerCount; i++) {
-      const mid = P.cols.slice(1, -1);
-      const cols = i === 0 ? P.cols[0] : i === layerCount - 1 ? P.cols[P.cols.length - 1] : mid[(i - 1) % mid.length];
-      const nodes = [];
-      for (let r = 0; r < P.rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          nodes.push(new THREE.Vector3(
-            (c - (cols - 1) / 2) * P.colSpacing,
-            (r - (P.rows - 1) / 2) * P.rowSpacing,
-            i * N.layerSpacing));
-        }
-      }
-      layers.push({ cols, nodes });
-    }
     const length = (layerCount - 1) * N.layerSpacing;
-    const halfWidth = Math.max.apply(null, layers.map((l) => (l.cols - 1) / 2 * P.colSpacing));
+    const halfWidth = (P.neurons - 1) / 2 * P.neuronSpacing;
+    const IR = N.irregular;
+    const rand = makeRandom(IR.seed);            // repeatable: the same arrangement on every visit
+    const spread = () => rand() * 2 - 1;         // -1 .. 1
+    for (let i = 0; i < layerCount; i++) {
+      // Each layer gets its own arch, slope and sideways shift...
+      const bow = spread() * IR.bow, tilt = spread() * IR.tilt, sway = spread() * IR.sway * P.neuronSpacing;
+      const lean = spread() * IR.depth * N.layerSpacing; // ...and its ends lean forwards or backwards
+      const nodes = [];
+      for (let c = 0; c < P.neurons; c++) {
+        const gridX = (c - (P.neurons - 1) / 2) * P.neuronSpacing;
+        const u = halfWidth ? gridX / halfWidth : 0; // -1 (left end) .. 1 (right end)
+        // ...and each neuron is then nudged off its place in all three directions.
+        nodes.push(new THREE.Vector3(
+          gridX + sway + spread() * IR.scatter * P.neuronSpacing,
+          bow * (1 - u * u) + tilt * gridX + spread() * IR.height,
+          i * N.layerSpacing + lean * u * u + spread() * IR.depth * N.layerSpacing));
+      }
+      layers.push({ cols: P.neurons, nodes });
+    }
 
     /* ---- Pick the section node in each layer (SECTIONS[].slot) --------- */
-    const sectionRow = N.sectionRow === 'top' ? P.rows - 1 : N.sectionRow === 'bottom' ? 0 : Math.floor((P.rows - 1) / 2);
     const sectionIndex = new Set();
     const docks = site.stops.map((stop, k) => {
       const layer = layers[k + 1];
-      const col = clamp(Math.round((layer.cols - 1) / 2 + stop.slot), 0, layer.cols - 1);
-      const idx = sectionRow * layer.cols + col;
+      const idx = clamp(Math.round((layer.cols - 1) / 2 + stop.slot), 0, layer.cols - 1);
       sectionIndex.add((k + 1) + ':' + idx);
       const node = layer.nodes[idx];
       return {
@@ -803,51 +822,58 @@
       };
     });
 
-    /* ---- Nodes: small glowing spheres --------------------------------- */
-    const glowTex = makeGlowTexture(THREE);
+    /* ---- Nodes: flat circles ------------------------------------------- */
+    // Every neuron is a plain 2D disc that always faces the camera. No glow, no shading.
     const plain = [];
     layers.forEach((layer, i) => layer.nodes.forEach((p, j) => { if (!sectionIndex.has(i + ':' + j)) plain.push(p); }));
 
-    const sphereGeo = new THREE.SphereGeometry(1, P.sphereDetail, P.sphereDetail);
-    const nodeMesh = new THREE.InstancedMesh(sphereGeo, makeNodeMaterial(THREE, CONFIG.colors.node, 0.3, scene.fog.density), plain.length);
+    const discGeo = new THREE.PlaneGeometry(2, 2); // a square; the shader cuts the circle out of it
+    const nodeMesh = new THREE.InstancedMesh(discGeo, makeDiscMaterial(THREE, CONFIG.colors.node, scene.fog.density), plain.length);
     const mtx = new THREE.Matrix4();
-    plain.forEach((p, i) => { mtx.makeScale(N.nodeRadius, N.nodeRadius, N.nodeRadius).setPosition(p); nodeMesh.setMatrixAt(i, mtx); });
+    plain.forEach((p, i) => {
+      const r = N.nodeRadius * (1 + spread() * IR.sizeVariation);
+      mtx.makeScale(r, r, r).setPosition(p);
+      nodeMesh.setMatrixAt(i, mtx);
+    });
+    nodeMesh.frustumCulled = false; // the discs are placed in the shader, so skip the bounding test
+    nodeMesh.renderOrder = 2;       // drawn after the edges, so lines end neatly underneath
     scene.add(nodeMesh);
 
-    // Soft halo around every plain node (one draw call).
-    const haloGeo = new THREE.BufferGeometry().setFromPoints(plain);
-    scene.add(new THREE.Points(haloGeo, new THREE.PointsMaterial({
-      map: glowTex, color: CONFIG.colors.node, size: 2.3, sizeAttenuation: true,
-      transparent: true, opacity: 0.5, depthWrite: false, blending: THREE.AdditiveBlending,
-    })));
-
-    // Section nodes: larger, lighter core, stronger halo. They are seen up close, so they get a smoother sphere.
-    const sectionGeo = new THREE.SphereGeometry(1, 32, 24);
+    // Section nodes: larger circles with a lighter fill. The current one also gets a thin ring.
     const sectionNodes = docks.map((d) => {
-      const core = new THREE.Mesh(sectionGeo, makeNodeMaterial(THREE, CONFIG.colors.sectionCore, 0.75, scene.fog.density));
+      const core = new THREE.Mesh(discGeo, makeDiscMaterial(THREE, CONFIG.colors.sectionCore, scene.fog.density));
       core.scale.setScalar(N.sectionNodeRadius);
       core.position.copy(d.node);
-      const halo = new THREE.Sprite(new THREE.SpriteMaterial({
-        map: glowTex, color: CONFIG.colors.node, transparent: true, opacity: 0.9, fog: true,
-        depthWrite: false, blending: THREE.AdditiveBlending,
-      }));
-      halo.position.copy(d.node);
-      halo.scale.setScalar(5);
-      scene.add(core, halo);
-      return { core, halo, glow: 0 };
+      core.frustumCulled = false;
+      core.renderOrder = 3;
+      scene.add(core);
+      return { core, glow: 0 };
     });
 
     /* ---- Edges: thin straight lines between adjacent layers ------------ */
     const edgePts = [];
+    const edgeShade = [];
     const edgeList = []; // [from, to] pairs, reused by the travelling signals
     for (let i = 0; i < layers.length - 1; i++) {
-      layers[i].nodes.forEach((a) => layers[i + 1].nodes.forEach((b) => {
-        if (Math.abs(a.x - b.x) <= P.edgeReach) { edgePts.push(a, b); edgeList.push([a, b]); }
+      const A = layers[i].nodes, B = layers[i + 1].nodes;
+      // Start fully connected, then leave out a share of the connections at random...
+      const keep = A.map(() => B.map(() => rand() >= IR.dropout));
+      // ...but never leave a neuron with nothing coming in or going out.
+      A.forEach((a, ai) => { if (!keep[ai].some(Boolean)) keep[ai][(rand() * B.length) | 0] = true; });
+      B.forEach((b, bi) => { if (!keep.some((row) => row[bi])) keep[(rand() * A.length) | 0][bi] = true; });
+      A.forEach((a, ai) => B.forEach((b, bi) => {
+        if (!keep[ai][bi]) return;
+        edgePts.push(a, b); edgeList.push([a, b]);
+        const shade = 1 - rand() * IR.edgeVariation; // some connections fainter than others
+        edgeShade.push(shade, shade, shade, shade, shade, shade);
       }));
     }
-    scene.add(new THREE.LineSegments(
-      new THREE.BufferGeometry().setFromPoints(edgePts),
-      new THREE.LineBasicMaterial({ color: CONFIG.colors.node, transparent: true, opacity: N.edgeOpacity, depthWrite: false, blending: THREE.AdditiveBlending })));
+    const edgeGeo = new THREE.BufferGeometry().setFromPoints(edgePts);
+    edgeGeo.setAttribute('color', new THREE.Float32BufferAttribute(edgeShade, 3));
+    scene.add(new THREE.LineSegments(edgeGeo, new THREE.LineBasicMaterial({
+      color: CONFIG.colors.node, vertexColors: true, transparent: true, opacity: N.edgeOpacity,
+      depthWrite: false, blending: THREE.AdditiveBlending,
+    })));
 
     // The route the camera follows, section node to section node, drawn brighter.
     if (docks.length > 1) {
@@ -867,8 +893,8 @@
       signalGeo = new THREE.BufferGeometry();
       signalGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(signalCount * 3), 3));
       const pts = new THREE.Points(signalGeo, new THREE.PointsMaterial({
-        map: glowTex, color: 0xffffff, size: 1.1, sizeAttenuation: true,
-        transparent: true, opacity: 0.9, depthWrite: false, blending: THREE.AdditiveBlending,
+        map: makeDotTexture(THREE), color: 0xffffff, size: 0.28, sizeAttenuation: true,
+        transparent: true, opacity: 0.9, depthWrite: false,
       }));
       pts.frustumCulled = false;
       scene.add(pts);
@@ -920,7 +946,7 @@
       flyPoint(fly.u, pos);
       flyPoint(fly.u + C.flyLookAhead, vLook);
       vLook.x *= 1 - C.flyLookInward;            // look ahead, a little inward...
-      vLook.z += (length / 2 - vLook.z) * C.flyLookInward;
+      vLook.z += (length / 2 - vLook.z) * 0.15;  // and a touch towards the middle, so the turns stay full of nodes
       vLook.y = 0;                               // ...and down at the network
       let turn = heading(fly.u + 0.05) - heading(fly.u - 0.05);
       turn = Math.atan2(Math.sin(turn), Math.cos(turn)) / 0.1; // turn rate, unwrapped
@@ -969,8 +995,8 @@
 
     // Reduced motion: one still, three-quarter view of the whole network.
     function staticPose(pos, quat) {
-      pos.set(-halfWidth * 0.6, 15, -11);
-      vLook.set(halfWidth * 0.1, 0, length * 0.24);
+      pos.set(-halfWidth * 1.1, 20, -16);
+      vLook.set(0, 0, length * 0.3);
       lookQuat(pos, vLook, 0, quat);
     }
 
@@ -995,12 +1021,12 @@
       else if (camera.view && camera.view.enabled) camera.clearViewOffset();
     }
 
-    function updateSectionGlow(dt, time) {
+    // The node of the section on screen grows a little and shows its ring.
+    function updateSectionGlow(dt) {
       sectionNodes.forEach((s, k) => {
         const on = site.active === k + 1 ? 1 : 0;
         s.glow += (on - s.glow) * (dt > 0 ? 1 - Math.exp(-dt * 4) : 1);
-        const pulse = motionMode === 'static' ? 0 : Math.sin(time * 2.2) * 0.06 * s.glow;
-        s.halo.scale.setScalar(5 + s.glow * 3.2 + pulse * 8);
+        s.core.material.uniforms.uRing.value = s.glow;
         s.core.scale.setScalar(N.sectionNodeRadius * (1 + s.glow * 0.25));
       });
     }
@@ -1008,7 +1034,7 @@
     function renderStill() {
       staticPose(camera.position, camera.quaternion);
       applyHeroShift(site.active === 0 ? 1 : 0); // beside the photo on the hero, centred behind the cards
-      updateSectionGlow(0, 0);
+      updateSectionGlow(0);
       renderer.render(scene, camera);
     }
 
@@ -1046,7 +1072,7 @@
       poseAt(t, time, camera.position, camera.quaternion);
       applyHeroShift(1 - smoothstep(0.05, 0.8, t));
       if (signalGeo) updateSignals(dt);
-      updateSectionGlow(dt, time);
+      updateSectionGlow(dt);
       renderer.render(scene, camera);
 
       /* Performance watchdog: average the frame time over ~2 seconds. */
@@ -1080,62 +1106,80 @@
     if (motionMode === 'static') renderStill(); else requestAnimationFrame(frame);
   }
 
-  /* Material for the node spheres. A flat colour would make near nodes look like
-     paper discs, so the centre is lit a little brighter than the rim, which
-     reads as a glowing ball. `lift` (0..1) is how far the centre is pushed
-     towards white. Distance fog is applied by hand to match the scene fog. */
-  function makeNodeMaterial(THREE, hex, lift, fogDensity) {
+  /* Material for the neurons: a flat, single-colour circle that always faces
+     the camera (a "billboard"). The circle is cut out of a square in the
+     fragment shader, with a one-pixel soft edge so it stays crisp at any size.
+     uRing (0..1) fades in a thin outline ring, used to mark the current section.
+     Distance fog is applied by hand to match the scene fog. */
+  function makeDiscMaterial(THREE, hex, fogDensity) {
     const rgb = (h) => new THREE.Vector3(((h >> 16) & 255) / 255, ((h >> 8) & 255) / 255, (h & 255) / 255);
     return new THREE.ShaderMaterial({
+      transparent: true,
       uniforms: {
         uColor: { value: rgb(hex) },
         uFog: { value: rgb(CONFIG.colors.background) },
-        uLift: { value: lift },
         uDensity: { value: fogDensity },
+        uRing: { value: 0 },
       },
       vertexShader: `
-        varying vec3 vNormal;
-        varying vec3 vView;
+        varying vec2 vPos;
+        varying float vDist;
+        const float EXTENT = 1.9;   // the square is a bit bigger than the circle, to leave room for the ring
         void main() {
-          vec4 p = vec4(position, 1.0);
+          vec4 centre = vec4(0.0, 0.0, 0.0, 1.0);
           #ifdef USE_INSTANCING
-            p = instanceMatrix * p;
+            centre = instanceMatrix * centre;
+            float radius = length(instanceMatrix[0].xyz);
+          #else
+            float radius = length(modelMatrix[0].xyz);
           #endif
-          vec4 mv = modelViewMatrix * p;
-          vNormal = normalize(normalMatrix * normal);
-          vView = -mv.xyz;
+          vec4 mv = modelViewMatrix * centre;
+          mv.xy += position.xy * radius * EXTENT;   // spread the corners in screen space = always facing the camera
+          vPos = position.xy * EXTENT;
+          vDist = length(mv.xyz);
           gl_Position = projectionMatrix * mv;
         }`,
       fragmentShader: `
         uniform vec3 uColor;
         uniform vec3 uFog;
-        uniform float uLift;
         uniform float uDensity;
-        varying vec3 vNormal;
-        varying vec3 vView;
+        uniform float uRing;
+        varying vec2 vPos;
+        varying float vDist;
         void main() {
-          float facing = clamp(dot(normalize(vNormal), normalize(vView)), 0.0, 1.0);
-          vec3 col = mix(uColor * 0.5, mix(uColor, vec3(1.0), uLift), pow(facing, 1.6));
-          float d = length(vView) * uDensity;
-          col = mix(uFog, col, exp(-d * d));
-          gl_FragColor = vec4(col, 1.0);
+          float d = length(vPos);
+          float aa = fwidth(d);
+          float disc = 1.0 - smoothstep(1.0 - aa, 1.0 + aa, d);
+          float ring = uRing * (smoothstep(1.5 - aa, 1.5 + aa, d) - smoothstep(1.62 - aa, 1.62 + aa, d));
+          float alpha = max(disc, ring);
+          if (alpha < 0.01) discard;
+          float f = vDist * uDensity;
+          gl_FragColor = vec4(mix(uFog, uColor, exp(-f * f)), alpha);
         }`,
     });
   }
 
-  // A soft round glow, drawn once on a small canvas and reused for every halo.
-  function makeGlowTexture(THREE) {
-    const size = 128;
+  // Small repeatable random number generator (mulberry32): same seed, same network.
+  function makeRandom(seed) {
+    let a = (seed >>> 0) || 1;
+    return function () {
+      a = (a + 0x6D2B79F5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  // A small hard-edged dot, used for the signals travelling along the edges.
+  function makeDotTexture(THREE) {
+    const size = 64;
     const c = document.createElement('canvas');
     c.width = c.height = size;
     const g = c.getContext('2d');
-    const grad = g.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-    grad.addColorStop(0, 'rgba(255,255,255,1)');
-    grad.addColorStop(0.18, 'rgba(255,255,255,0.55)');
-    grad.addColorStop(0.45, 'rgba(255,255,255,0.14)');
-    grad.addColorStop(1, 'rgba(255,255,255,0)');
-    g.fillStyle = grad;
-    g.fillRect(0, 0, size, size);
+    g.fillStyle = '#fff';
+    g.beginPath();
+    g.arc(size / 2, size / 2, size / 2 - 2, 0, Math.PI * 2);
+    g.fill();
     const tex = new THREE.CanvasTexture(c);
     tex.colorSpace = THREE.SRGBColorSpace;
     return tex;

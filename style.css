@@ -208,8 +208,7 @@ strong { color: var(--heading); font-weight: 700; }
 .card:focus { outline: none; }
 .corner {
   position: absolute; width: 9px; height: 9px; border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 10px 2px rgba(var(--cyan-rgb), 0.7);
+  background: var(--cyan);   /* flat, like the neurons */
 }
 .corner.tl { top: -5px; left: -5px; }   .corner.tr { top: -5px; right: -5px; }
 .corner.bl { bottom: -5px; left: -5px; } .corner.br { bottom: -5px; right: -5px; }
@@ -266,7 +265,7 @@ h4.entry-title { font-size: 1.05rem; }
 .timeline .entry { position: relative; padding-left: 1.6rem; }
 .timeline .entry::before {
   content: ""; position: absolute; left: 0; top: 0.55rem; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--cyan); box-shadow: 0 0 8px 1px rgba(var(--cyan-rgb), 0.6);
+  background: var(--cyan);
 }
 .timeline .entry::after {
   content: ""; position: absolute; left: 3px; top: 1.4rem; bottom: -1.6rem; width: 1px;
