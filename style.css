@@ -19,7 +19,7 @@
 
   --photo-col: 42vw;           /* hero photo column; the photo itself is this minus the padding (about 37% of the screen) */
   --card-width: 50rem;
-  --flight-gap: 55vh;          /* empty scroll between cards = time the camera has to fly */
+  --flight-gap: 18vh;          /* empty scroll between cards = how long the flight between sections lasts. Raise for a longer flight. */
 }
 
 /* 2. Base ------------------------------------------------------------------ */
@@ -181,16 +181,20 @@ strong { color: var(--heading); font-weight: 700; }
 @keyframes cue { 0% { transform: scaleY(0); opacity: 0; } 35% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
 
 /* 5. Section cards --------------------------------------------------------- */
-/* Each section is at least one screen tall, with an empty gap above it.
-   The gap is where the camera rises, glides along the edge and swoops in. */
+/* Each section has an empty gap above it (--flight-gap). The gap is where the
+   camera rises, glides along the edge and swoops in: a bigger gap, or bigger
+   padding / min-height here, means a longer flight between sections. */
 .node-section {
   position: relative; z-index: 1;
-  min-height: 100vh; min-height: 100svh;
+  min-height: 70vh; min-height: 70svh;
   display: grid; place-items: center;
   margin-top: var(--flight-gap);
-  padding: 12vh clamp(1rem, 4vw, 3rem);
+  padding: 8vh clamp(1rem, 4vw, 3rem);
   scroll-margin-top: 12vh;
 }
+
+/* The last section fills the screen so the page can scroll far enough to dock at it. */
+.node-section:last-child { min-height: 100vh; min-height: 100svh; }
 
 /* The card is drawn like one cell of the network: thin edges, a node on every corner. */
 .card {
@@ -333,7 +337,7 @@ h4.entry-title { font-size: 1.05rem; }
 
 /* 9. Phones and narrow windows (keep in sync with CONFIG.mobileQuery in script.js) */
 @media (max-width: 800px) {
-  :root { --flight-gap: 45vh; }
+  :root { --flight-gap: 14vh; }
 
   /* Photo on top, network (with the text over it) below */
   .hero { grid-template-columns: minmax(0, 1fr); align-items: start; align-content: start; }
@@ -344,7 +348,7 @@ h4.entry-title { font-size: 1.05rem; }
   .hero-name { font-size: clamp(2.5rem, 12vw, 3.5rem); }
   .scroll-cue { display: none; }
 
-  .node-section { padding: 9vh 0.9rem; }
+  .node-section { padding: 6vh 0.9rem; }
   .node-section:last-child { padding-bottom: 6.5rem; }   /* room for the mini map */
   .card { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 

@@ -126,8 +126,8 @@
       nodeAbove: 0.4,      // narrow screens: how far above the middle of the screen, as a fraction of its height
 
       // Travelling between two section nodes.
-      riseHeight: 6,       // how high the camera climbs before swooping down
-      follow: 3.2,         // how quickly the camera catches up with the scroll (higher = snappier)
+      riseHeight: 4.5,     // how high the camera climbs before swooping down
+      follow: 5,           // how quickly the camera catches up with the scroll (higher = snappier)
 
       // While the hero is on screen the view is shifted so the network sits
       // beside the photo (desktop) or below it (phone). Fractions of the screen.
