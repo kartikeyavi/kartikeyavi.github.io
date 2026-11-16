@@ -201,7 +201,7 @@ Use **Add file → Upload files** in the right folder on GitHub and commit. Afte
 ### Two things that are not in `content.md`
 
 - **Link previews.** LinkedIn, Slack and search engines do not run JavaScript, so the page title, description and preview image they show are written near the top of `index.html`. If your name, headline or domain changes, update those few lines.
-- **Look and layout of the network.** Open `script.js`: the `CONFIG` block at the top sets the number of neurons per layer (`neurons`), how uneven the network is (`irregular`; change `seed` for a different arrangement), spacing, camera height and speed, and the `SECTIONS` list maps each `## Heading` to its node (order, and how far left or right the node sits). Colours and fonts are the variables at the top of `style.css`.
+- **Look and layout of the network.** Open `script.js`: the `CONFIG` block at the top sets the number of neurons per layer (`neurons`), how uneven the network is (`irregular`; change `seed` for a different arrangement), spacing, camera height and speed, and whether the camera flies to the next node by itself when you leave a section (`scroll.mode: 'auto'`, with `hopDuration` setting how long the flight takes) or follows the scroll position (`'scrub'`), and the `SECTIONS` list maps each `## Heading` to its node (order, and how far left or right the node sits). Colours and fonts are the variables at the top of `style.css`.
 
 ## 7. Optional: try it in a separate repository first
 

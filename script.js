@@ -127,7 +127,8 @@
 
       // Travelling between two section nodes.
       riseHeight: 4.5,     // how high the camera climbs before swooping down
-      follow: 5,           // how quickly the camera catches up with the scroll (higher = snappier)
+      hopDuration: 1.1,    // seconds the camera takes to fly from one node to the next (scroll.mode 'auto')
+      follow: 5,           // how quickly the camera catches up with the scroll (scroll.mode 'scrub'; higher = snappier)
 
       // While the hero is on screen the view is shifted so the network sits
       // beside the photo (desktop) or below it (phone). Fractions of the screen.
@@ -136,6 +137,15 @@
     },
 
     scroll: {
+      /* How scrolling drives the camera between sections:
+           'auto'  -> as soon as you scroll out of a section, the camera flies to
+                      the next node by itself, at its own fixed speed (hopDuration).
+                      Scroll back before reaching the next section and it returns.
+           'scrub' -> the flight is tied to the scroll: scroll halfway through the
+                      gap and the camera is halfway along the edge.                */
+      mode: 'auto',
+      leaveAt: 0.1,     // 'auto': how far into the gap after a section counts as having left it (0..1)
+      leaveHeroAt: 0.4, // 'auto': same for the hero; later, so the flyover stays while the hero is still on screen
       arriveAt: 0.3,   // camera is fully docked once the card's top edge reaches 30% of the screen height
       departAt: 0.6,   // camera starts leaving once the card's bottom edge rises above 60% of the screen height
       jumpOffset: 0.14, // mini map jumps place the card's top edge 14% from the top of the screen
@@ -673,7 +683,7 @@
      7. Scroll logic
      ------------------------------------------------------------------------
      The page scrolls normally. From the scroll position we work out a single
-     number, site.target:
+     number (see targetFromScroll):
 
         0 ............ hero (camera flies its loop above the network)
         1 ............ docked at the first section's node
@@ -681,7 +691,11 @@
         2 ............ docked at the second node, and so on.
 
      While a card is being read (between its "arrive" and "depart" scroll
-     positions) the number stays put, so the camera only drifts gently.        */
+     positions) the number stays put, so the camera only drifts gently.
+
+     In CONFIG.scroll.mode 'scrub' the camera follows that number directly. In
+     'auto' (the default) it is rounded to a whole node by stopFromScroll(), and
+     the camera flies there by itself.                                         */
   let marks = [];      // per stop: { arrive, depart, jump } scroll positions in px
   let heroDepart = 0;
 
@@ -716,10 +730,32 @@
     return marks.length;
   }
 
+  /* 'auto' mode: turn the continuous scroll value into "which node should the
+     camera be at". `home` is the section last docked at. In the gap after it,
+     the camera stays at home until the scroll has moved `leaveAt` of the way
+     out, then switches to the neighbouring node in one go. A slightly lower
+     threshold applies for switching back, so it cannot flicker at the edge. */
+  let home = 0, stop = 0;
+  function stopFromScroll(c) {
+    const lo = Math.floor(c), f = c - lo;
+    if (f === 0) { home = stop = lo; return stop; }   // inside a section's reading range
+    const hi = lo + 1;
+    const S = CONFIG.scroll;
+    if (home <= lo) {                                 // leaving `lo` downwards
+      const leave = lo === 0 ? S.leaveHeroAt : S.leaveAt;
+      stop = f > (stop === hi ? leave * 0.5 : leave) ? hi : lo;
+    } else {                                          // leaving `hi` upwards
+      const g = 1 - f;
+      stop = g > (stop === lo ? S.leaveAt * 0.5 : S.leaveAt) ? lo : hi;
+    }
+    return stop;
+  }
+
   function updateTarget() {
-    site.target = targetFromScroll(window.scrollY);
+    const c = targetFromScroll(window.scrollY);
+    site.target = CONFIG.scroll.mode === 'scrub' ? c : stopFromScroll(c);
     const active = Math.round(site.target);
-    root.classList.toggle('past-hero', site.target > 0.15);
+    root.classList.toggle('past-hero', c > 0.15);
     if (active !== site.active) {
       site.active = active;
       root.dataset.node = String(active);
@@ -1096,7 +1132,15 @@
         slowFrame = !slowFrame;
         if (slowFrame) return; // draw every other frame
       } else {
-        t += (site.target - t) * (1 - Math.exp(-dt * C.follow));
+        if (CONFIG.scroll.mode === 'scrub') {
+          t += (site.target - t) * (1 - Math.exp(-dt * C.follow));   // trail the scroll smoothly
+        } else {
+          // Fly towards the chosen node at a fixed pace, whatever the scroll is doing.
+          // (poseAt eases each hop in and out; several hops in a row go a little faster.)
+          const gap = site.target - t, far = Math.abs(gap);
+          const step = dt / C.hopDuration * Math.max(1, Math.pow(far, 0.6));
+          t = far <= step ? site.target : t + Math.sign(gap) * step;
+        }
       }
 
       if (t < 1) fly.u += dt * C.flySpeed;
