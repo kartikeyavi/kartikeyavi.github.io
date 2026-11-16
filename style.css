@@ -19,7 +19,7 @@
 
   --photo-col: 42vw;           /* hero photo column; the photo itself is this minus the padding (about 37% of the screen) */
   --card-width: 50rem;
-  --flight-gap: 35vh;          /* empty scroll between cards = how long the flight between sections lasts. Raise for a longer flight. */
+  --flight-gap: 40vh;          /* empty scroll between cards = how long the flight between sections lasts. Raise for a longer flight. */
 }
 
 /* 2. Base ------------------------------------------------------------------ */
